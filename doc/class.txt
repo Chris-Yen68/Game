@@ -1,0 +1,103 @@
+Dice[QK, ZL, XQ, GB, SY]
++   roll(face:int) -> int sta
++   roll(face:int, modifier:int) -> int sta
++   roll(times:int, face:int, modifier:int) -> int sta
+
+Character
++   ABILITY_STR:String sta
++   ABILITY_...
+-   abilityScores:[String:Integer]
++   getAbilityScore(name:String):Integer
++   getAbilityModifier(name:String):Integer
++   genrateAbilities()
+
+-   backpack:[Equipment]
++   equipmentsInBackpack() -> [Equipment]
++   isBackpackFull() -> boolean
++   pickUpEquipment(equipment:Equipment)
++   dropEquipment(equipment:Equipment)
+
+-   equipments:[String:Equipment]
++   getEquipment(type:String) -> Equipment
++   equip(equipment:Equipment)
++   unequip(equipment:Equipment)
+-   enhancedValueOnEquipments(attribute:String) -> int
+
+-   level:int get set
+-   name:String get set
+
+-   hp:int get set
++   generateHp()
+
++   getArmorClass() -> int
++   getAttackBonus() -> int
++   getDamageBonus() -> int
+
+Chest
+-   equipment:Equipment get set
+
+Equipment
+-   name:String get set
+-   type:String get set
+-   enhancedAttribute:String get set
+-   enhancedValue:get set
++   validate() -> boolean
+    //  enhancedAttribute type
+
+
+Point
+-   x:int get set
+-   y:int get set
++   add(delta:Point) -> Point
++   directions() -> [Point] sta
+
+
+
+
+GameMap
+-   name:String get set
+
+-   size:int get set
+-   cells:[[Cell]]
+
++   addContent(content:Content, location:Point)
++   removeContent(location:Point)
++   getContent(location:Point) -> Content
++   hasContent(location:Point) -> boolean
++   moveContent(fromLocation:Point, toLocation:Point)
+
++   getCell(location:Point) -> Cell
+
+-   exitPoint:Point get
+-   enterPoint:Point get
+
++   bfsSearch(source:Point, int depth) -> [Cell]
+
+Cell
++   location:Point
++   content:Content
+
+MapValidator
++   validate() -> boolean
+
+MapValidatorEntrance : MapValidator
+MapValidatorExit : MapValidator
+MapValidatorInterConnection : MapValidator
+
+
+
+
+
+
+
+
+-
+
+
+
+
+
+
+
+
+.

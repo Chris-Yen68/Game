@@ -21,9 +21,9 @@ public class EquipmentView extends JPanel {
         dataToView();
     }
 
-    private Label typeLabel;
-    private Label nameLabel;
-    private Label enhanceLabel;
+    public Label typeLabel;
+    public Label nameLabel;
+    public Label enhanceLabel;
 
     public EquipmentView(){
         this.setLayout(null);

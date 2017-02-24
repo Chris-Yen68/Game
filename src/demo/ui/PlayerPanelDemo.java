@@ -1,6 +1,7 @@
 package demo.ui;
 
 import game.Player;
+import game.Simulation;
 import ui.PlayerPanel;
 
 import javax.swing.*;
@@ -19,10 +20,6 @@ public class PlayerPanelDemo extends JFrame {
         PlayerPanel playerPanel = new PlayerPanel();
         this.add(playerPanel);
 
-        Player player = new Player();
-        player.setLevel(10);
-        player.generateAbilities();
-        player.setHp();
-        player.
+        playerPanel.setPlayer(Simulation.newPlayer());
     }
 }

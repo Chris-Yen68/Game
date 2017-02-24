@@ -39,17 +39,17 @@ public class PlayerPanel extends JPanel {
      * Layout
      */
 
-    public Label levelValueLabel;
+    public JLabel levelValueLabel;
     public AbilityView strAbilityView;
     public AbilityView intAbilityView;
     public AbilityView dexAbilityView;
     public AbilityView wisAbilityView;
     public AbilityView conAbilityView;
     public AbilityView chaAbilityView;    
-    public Label hpValueLabel;
-    public Label abValueLabel;
-    public Label acValueLabel;
-    public Label dbValueLabel;
+    public JLabel hpValueLabel;
+    public JLabel abValueLabel;
+    public JLabel acValueLabel;
+    public JLabel dbValueLabel;
     public EquipmentView weaponEquipmentView;
     public EquipmentView shieldEquipmentView;
     public EquipmentView armorEquipmentView;
@@ -60,52 +60,52 @@ public class PlayerPanel extends JPanel {
 
     private void initSubviews(){
 
-        Label label;
+        JLabel label;
         AbilityView abilityView;
         EquipmentView equipmentView = new EquipmentView();
         Button button;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(400, 200);
         label.setLocation(0, 0);
         add(label);
         label.setBackground(new Color(200, 200, 200));
-        Label titleBackground = new Label();
+        JLabel titleBackground = new JLabel();
         titleBackground = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(100, 20);
         label.setLocation(150, 0);
         add(label);
         label.setText("Player");
-        Label titleLabel = new Label();
+        JLabel titleLabel = new JLabel();
         titleLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(60, 20);
         label.setLocation(10, 30);
         add(label);
         label.setText("Name");
-        Label nameLable = new Label();
+        JLabel nameLable = new JLabel();
         nameLable = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(90, 20);
         label.setLocation(80, 30);
         add(label);
         label.setText(player.getName());
-        Label nameValueLabel = new Label();
+        JLabel nameValueLabel = new JLabel();
         nameValueLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(60, 20);
         label.setLocation(190, 30);
         add(label);
         label.setText("Level");
-        Label levelLable = new Label();
+        JLabel levelLable = new JLabel();
         levelLable = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(40, 20);
         label.setLocation(260, 30);
         add(label);
@@ -150,15 +150,15 @@ public class PlayerPanel extends JPanel {
         abilityView.nameLabel.setText(Player.ABILITY_CHA);
         chaAbilityView = abilityView;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(100, 20);
         label.setLocation(10, 150);
         add(label);
         label.setText("Hit Point");
-        Label hpLabel = new Label();
+        JLabel hpLabel = new JLabel();
         hpLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(40, 20);
         label.setLocation(120, 150);
         add(label);
@@ -166,15 +166,15 @@ public class PlayerPanel extends JPanel {
 //        hpValueLabel.setText(player.getHp() + "");
 //      写到gerenate按钮event
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(100, 20);
         label.setLocation(190, 150);
         add(label);
         label.setText("Attack Bonus");
-        Label abLabel = new Label();
+        JLabel abLabel = new JLabel();
         abLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(40, 20);
         label.setLocation(300, 150);
         add(label);
@@ -182,15 +182,15 @@ public class PlayerPanel extends JPanel {
 //        abValueLabel.setText(player.getHp() + "");
 //      写到gerenate按钮event
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(100, 20);
         label.setLocation(10, 180);
         add(label);
         label.setText("Armor Class");
-        Label acLabel = new Label();
+        JLabel acLabel = new JLabel();
         acLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(40, 20);
         label.setLocation(120, 180);
         add(label);
@@ -198,15 +198,15 @@ public class PlayerPanel extends JPanel {
 //        acValueLabel.setText(player.getHp() + "");
 //      写到gerenate按钮event
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(100, 20);
         label.setLocation(190, 180);
         add(label);
         label.setText("Damage Bonus");
-        Label dbLabel = new Label();
+        JLabel dbLabel = new JLabel();
         dbLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(40, 20);
         label.setLocation(300, 180);
         add(label);

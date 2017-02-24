@@ -16,16 +16,16 @@ public class Player {
      * Abliblities and methods.
      */
 
-    public final static String ABILITY_STR = "Strength";
-    public final static String ABILITY_DEX = "Dexterity";
-    public final static String ABILITY_CON = "Constitution";
-    public final static String ABILITY_INT = "Intelligence";
-    public final static String ABILITY_WIS = "Wisdom";
-    public final static String ABILITY_CHA = "Charisma";
+    public final static String ABILITY_STR = "STR";
+    public final static String ABILITY_DEX = "DEX";
+    public final static String ABILITY_CON = "CON";
+    public final static String ABILITY_INT = "INT";
+    public final static String ABILITY_WIS = "WIS";
+    public final static String ABILITY_CHA = "CHA";
 
-    public final static String ATTRIBUTE_ARMOR_CLASS = "Armor Class";
-    public final static String ATTRIBUTE_ATTACK_BONUS = "Attack Bonus";
-    public final static String ATTRIBUTE_DAMAGE_BONUS = "Damage Bonus";
+    public final static String ATTRIBUTE_ARMOR_CLASS = "AC";
+    public final static String ATTRIBUTE_ATTACK_BONUS = "AB";
+    public final static String ATTRIBUTE_DAMAGE_BONUS = "DB";
 
     private Map<String, Integer> ablilityScores = new HashMap<>();
 

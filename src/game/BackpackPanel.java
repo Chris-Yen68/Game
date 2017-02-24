@@ -10,6 +10,7 @@ import java.util.List;
  * Created by Saki on 2017/2/24.
  */
 public class BackpackPanel extends JPanel{
+    private Player player = new Player();
 
     public BackpackPanel(){
         this.setLayout(null);
@@ -27,7 +28,7 @@ public class BackpackPanel extends JPanel{
         int x = 10;
         int y = 30;
 
-        Player player = new Player();
+
         List<Equipment> backpack;
         backpack = player.equipmentsInBackpack();
 
@@ -37,8 +38,8 @@ public class BackpackPanel extends JPanel{
             this.add(equipmentView);
             equipmentView.setEquipment(equipment);
 
-            Button equipButton = new Button();
-            Button dropButtton = new Button();
+            Button equipButton = new Button("equip");
+            Button dropButtton = new Button("drop");
 
             equipButton.setSize(60, 20);
             equipButton.setLocation(310, y);

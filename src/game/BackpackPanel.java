@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Saki on 2017/2/24.
  */
 public class BackpackPanel extends JPanel{
-    private Player player = new Player();
+    private Player player = Simulation.newPlayer();
 
     public BackpackPanel(){
         this.setLayout(null);

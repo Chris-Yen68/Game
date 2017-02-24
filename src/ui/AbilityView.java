@@ -41,5 +41,7 @@ public class AbilityView extends JPanel {
         add(label);
         modifierLabel = label;
 
+
+
     }
 }

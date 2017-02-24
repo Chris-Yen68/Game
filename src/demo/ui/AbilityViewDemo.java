@@ -11,6 +11,7 @@ import javax.swing.*;
  * Created by Saki on 2017/2/24.
  */
 public class AbilityViewDemo extends JFrame{
+
     public static void main(String[] args) {
         AbilityViewDemo window = new AbilityViewDemo();
         window.setSize(200, 50);

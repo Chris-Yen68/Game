@@ -1,9 +1,6 @@
 .idea/
-/out/
-**/.DS_Store
-**/Thumbs.db
-
 
 .idea/Game.iml
 
 .idea/workspace.xml
+test/

@@ -25,17 +25,5 @@ public class AbilityViewDemo extends JFrame{
         abilityView.nameLabel.setText("HAHAHA");
         abilityView.scoreLabel.setText("HAHAHA");
         abilityView.modifierLabel.setText("HAHAHA");
-
-        // demo 2
-        EquipmentView equipmentView = new EquipmentView();
-        equipmentView.setLocation(0, 50);
-        this.add(equipmentView);
-
-        Equipment equipment = new Equipment();
-        equipment.setName("haha");
-        equipment.setType(Equipment.BOOTS);
-        equipment.setEnhancedAttribute(Player.ATTRIBUTE_ARMOR_CLASS);
-        equipment.setEnhancedValue(2);
-        equipmentView.setEquipment(equipment);
     }
 }

@@ -10,7 +10,27 @@ import java.util.List;
  */
 public class Simulation {
     public static Player newPlayer(){
-        return null;
+        Player player = new Player(2, "playerDemo");
+        player.generateAbilities();
+        player.generateHp();
+
+        List<Equipment> equipmentList = new LinkedList<Equipment>();
+        equipmentList = equipments21();
+
+        int size = equipmentList.size();
+
+        for (int i = 0; i < 11; i++) {
+            int randomIndex = (int)(Math.random() * size);
+            player.pickUpEquipment(equipments21().get(randomIndex));
+        }
+
+        for (int i = 0; i < 4; i++) {
+            player.equip(player.equipmentsInBackpack().get(i));
+        }
+
+        player.setHp(100);
+
+        return player;
     }
 
 

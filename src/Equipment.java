@@ -73,7 +73,7 @@ public class Equipment {
             }
         }else if (type.equals(BELT)){
             if (enhancedAttribute.equals(Character.ABILITY_CON)
-                    || enhancedAttribute.equals(Character.ABILITY_STR){
+                    || enhancedAttribute.equals(Character.ABILITY_STR)){
                 isValidate = true;
             }
         }else if (type.equals(BOOTS)){

@@ -20,7 +20,7 @@ public class BackpackPanel extends JPanel{
     }
 
     private void initSubviews(){
-        Label label = new Label("Backpack");
+        JLabel label = new JLabel("Backpack");
         label.setSize(460, 20);
         label.setLocation(0, 0);
         this.add(label);
@@ -38,8 +38,8 @@ public class BackpackPanel extends JPanel{
             this.add(equipmentView);
             equipmentView.setEquipment(equipment);
 
-            Button equipButton = new Button("equip");
-            Button dropButtton = new Button("drop");
+            JButton equipButton = new JButton("equip");
+            JButton dropButtton = new JButton("drop");
 
             equipButton.setSize(60, 20);
             equipButton.setLocation(310, y);

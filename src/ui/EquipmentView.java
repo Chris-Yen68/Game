@@ -3,7 +3,6 @@ package ui;
 import game.Equipment;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Created by Saki on 2017/2/24.
@@ -21,9 +20,9 @@ public class EquipmentView extends JPanel {
         dataToView();
     }
 
-    public Label typeLabel;
-    public Label nameLabel;
-    public Label enhanceLabel;
+    public JLabel typeLabel;
+    public JLabel nameLabel;
+    public JLabel enhanceLabel;
 
     public EquipmentView(){
         this.setLayout(null);
@@ -34,21 +33,21 @@ public class EquipmentView extends JPanel {
 
     private void initSubviews(){
 
-        Label label = new Label();
+        JLabel label = new JLabel();
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(60, 20);
         label.setLocation(0, 0);
         add(label);
         typeLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(160, 20);
         label.setLocation(70, 0);
         add(label);
         nameLabel = label;
 
-        label = new Label();
+        label = new JLabel();
         label.setSize(60, 20);
         label.setLocation(240, 0);
         add(label);

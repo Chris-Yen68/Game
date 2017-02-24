@@ -4,7 +4,6 @@ import ui.EquipmentView;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
 import java.util.List;
 
 /**

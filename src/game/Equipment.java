@@ -1,5 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
+package game;
 
 /**
  * This class is the equitment
@@ -24,7 +23,7 @@ public class Equipment {
     private int enhancedValue;
 
     /**
-     * This is the construtor of Equipment
+     * This is the construtor of game.Equipment
      * @param name String
      * @param type String
      * @param enhancedAttribute String
@@ -41,7 +40,7 @@ public class Equipment {
     }
 
     /**
-     * This method is to validate whether the attribute can be improve according to  the Equipment
+     * This method is to validate whether the attribute can be improve according to  the game.Equipment
      * @return isValidate boolean
      */
 
@@ -50,40 +49,40 @@ public class Equipment {
         boolean isValidate = false;
 
         if (type.equals(HELMET)){
-            if (enhancedAttribute.equals(Character.ABILITY_INT)
-                    || enhancedAttribute.equals(Character.ATTRIBUTE_ARMOR_CLASS)
-                    || enhancedAttribute.equals(Character.ABILITY_WIS)){
+            if (enhancedAttribute.equals(Player.ABILITY_INT)
+                    || enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)
+                    || enhancedAttribute.equals(Player.ABILITY_WIS)){
                 isValidate = true;
             }
         }else if (type.equals(ARMOR)){
-            if (enhancedAttribute.equals(Character.ATTRIBUTE_ARMOR_CLASS)){
+            if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)){
                 isValidate = true;
             }
         }else if (type.equals(SHIELD)){
-            if (enhancedAttribute.equals(Character.ATTRIBUTE_ARMOR_CLASS)){
+            if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)){
                 isValidate = true;
             }
         }else if (type.equals(RING)){
-            if (enhancedAttribute.equals(Character.ATTRIBUTE_ARMOR_CLASS)
-                    || enhancedAttribute.equals(Character.ABILITY_STR)
-                    || enhancedAttribute.equals(Character.ABILITY_CON)
-                    || enhancedAttribute.equals(Character.ABILITY_WIS)
-                    || enhancedAttribute.equals(Character.ABILITY_CHA)){
+            if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)
+                    || enhancedAttribute.equals(Player.ABILITY_STR)
+                    || enhancedAttribute.equals(Player.ABILITY_CON)
+                    || enhancedAttribute.equals(Player.ABILITY_WIS)
+                    || enhancedAttribute.equals(Player.ABILITY_CHA)){
                 isValidate = true;
             }
         }else if (type.equals(BELT)){
-            if (enhancedAttribute.equals(Character.ABILITY_CON)
-                    || enhancedAttribute.equals(Character.ABILITY_STR)){
+            if (enhancedAttribute.equals(Player.ABILITY_CON)
+                    || enhancedAttribute.equals(Player.ABILITY_STR)){
                 isValidate = true;
             }
         }else if (type.equals(BOOTS)){
-            if (enhancedAttribute.equals(Character.ATTRIBUTE_ARMOR_CLASS)
-                    || enhancedAttribute.equals(Character.ABILITY_DEX)){
+            if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)
+                    || enhancedAttribute.equals(Player.ABILITY_DEX)){
                 isValidate = true;
             }
         }else if (type.equals(WEAPON)){
-            if (enhancedAttribute.equals(Character.ATTRIBUTE_ATTACK_BONUS)
-                    || enhancedAttribute.equals(Character.ATTRIBUTE_DAMAGE_BONUS)){
+            if (enhancedAttribute.equals(Player.ATTRIBUTE_ATTACK_BONUS)
+                    || enhancedAttribute.equals(Player.ATTRIBUTE_DAMAGE_BONUS)){
                 isValidate = true;
             }
         }
@@ -101,7 +100,7 @@ public class Equipment {
     }
 
     /**
-     * this method is to get name of Equipment
+     * this method is to get name of game.Equipment
      * @return name String
      */
 
@@ -110,7 +109,7 @@ public class Equipment {
     }
 
     /**
-     * this method is to set name of Equipment
+     * this method is to set name of game.Equipment
      * @param name String
      */
 
@@ -119,7 +118,7 @@ public class Equipment {
     }
 
     /**
-     * this method is to get type of Equipment
+     * this method is to get type of game.Equipment
      * @return type String
      */
 
@@ -128,7 +127,7 @@ public class Equipment {
     }
 
     /**
-     * this method is to set type of Equipment
+     * this method is to set type of game.Equipment
      * @param type String
      */
 
@@ -172,60 +171,60 @@ public class Equipment {
         this.enhancedValue = enhancedValue;
     }
 
-//    public static List<Equipment> demo(){
-//        List<Equipment> equipmentsList = new LinkedList<>();
+//    public static List<game.Equipment> demo(){
+//        List<game.Equipment> equipmentsList = new LinkedList<>();
 //
 //
-//        Equipment lighLeather = new Equipment("Light Leather","ARMOR","AC",1);
-//        Equipment quiltedLeather = new Equipment("Quilted Leather","ARMOR","AC",3);
-//        Equipment armingCoat = new Equipment("Arming Coat","ARMOR","AC",5);
+//        game.Equipment lighLeather = new game.Equipment("Light Leather","ARMOR","AC",1);
+//        game.Equipment quiltedLeather = new game.Equipment("Quilted Leather","ARMOR","AC",3);
+//        game.Equipment armingCoat = new game.Equipment("Arming Coat","ARMOR","AC",5);
 //        equipmentsList.add(lighLeather);
 //        equipmentsList.add(quiltedLeather);
 //        equipmentsList.add(armingCoat);
 //
-//        Equipment mightOfDread = new Equipment("Might of Dread","HELMET","SCORE_INT",3);
-//        Equipment coifOfDelusions = new Equipment("Coif of Delusions","HELMET","SCORE_WIS",5);
-//        Equipment dawOfInsanity = new Equipment("Dawn of Insanity","HELMET","AC",2);
+//        game.Equipment mightOfDread = new game.Equipment("Might of Dread","HELMET","SCORE_INT",3);
+//        game.Equipment coifOfDelusions = new game.Equipment("Coif of Delusions","HELMET","SCORE_WIS",5);
+//        game.Equipment dawOfInsanity = new game.Equipment("Dawn of Insanity","HELMET","AC",2);
 //        equipmentsList.add(mightOfDread);
 //        equipmentsList.add(coifOfDelusions);
 //        equipmentsList.add(dawOfInsanity);
 //
-//        Equipment oathkeeper = new Equipment("Oathkeeper","SHIELD","AC",3);
-//        Equipment ghostwalker = new Equipment("Ghostwalker","SHIELD","AC",4);
-//        Equipment sierra = new Equipment("Sierra","SHIELD","AC",5);
+//        game.Equipment oathkeeper = new game.Equipment("Oathkeeper","SHIELD","AC",3);
+//        game.Equipment ghostwalker = new game.Equipment("Ghostwalker","SHIELD","AC",4);
+//        game.Equipment sierra = new game.Equipment("Sierra","SHIELD","AC",5);
 //        equipmentsList.add(oathkeeper);
 //        equipmentsList.add(ghostwalker);
 //        equipmentsList.add(sierra);
 //
-//        Equipment linenSash = new Equipment("Linen Sash","BELT","SCORE_CON",3);
-//        Equipment loyalWoolSash = new Equipment("Loyal Wool Sash","BELT","SCORE_STR",4);
-//        Equipment cordOfBeginnings = new Equipment("Cord of Beginnings","BELT","SCORE_CON",5);
+//        game.Equipment linenSash = new game.Equipment("Linen Sash","BELT","SCORE_CON",3);
+//        game.Equipment loyalWoolSash = new game.Equipment("Loyal Wool Sash","BELT","SCORE_STR",4);
+//        game.Equipment cordOfBeginnings = new game.Equipment("Cord of Beginnings","BELT","SCORE_CON",5);
 //        equipmentsList.add(linenSash);
 //        equipmentsList.add(loyalWoolSash);
 //        equipmentsList.add(cordOfBeginnings);
 //
 //
-//        Equipment steelWalkers = new Equipment("Steel Walkers","BOOTS","AC",3);
-//        Equipment bronzeWarboots = new Equipment("Bronze Warboots","BOOTS","SCORE_DEX",4);
-//        Equipment boneStompers = new Equipment("Bone Stompers","BOOTS","SCORE_DEX",5);
+//        game.Equipment steelWalkers = new game.Equipment("Steel Walkers","BOOTS","AC",3);
+//        game.Equipment bronzeWarboots = new game.Equipment("Bronze Warboots","BOOTS","SCORE_DEX",4);
+//        game.Equipment boneStompers = new game.Equipment("Bone Stompers","BOOTS","SCORE_DEX",5);
 //        equipmentsList.add(steelWalkers);
 //        equipmentsList.add(bronzeWarboots);
 //        equipmentsList.add(boneStompers);
 //
 //
-//        Equipment ashbringer = new Equipment("Ashbringer","WEAPON","AB",5);
-//        Equipment axeOfCenarius = new Equipment("Axe of Cenarius","WEAPON","DB",5);
-//        Equipment bloodhoofRunespear = new Equipment("Bloodhoof Runespear","WEAPON","DB",5);
+//        game.Equipment ashbringer = new game.Equipment("Ashbringer","WEAPON","AB",5);
+//        game.Equipment axeOfCenarius = new game.Equipment("Axe of Cenarius","WEAPON","DB",5);
+//        game.Equipment bloodhoofRunespear = new game.Equipment("Bloodhoof Runespear","WEAPON","DB",5);
 //        equipmentsList.add(ashbringer);
 //        equipmentsList.add(axeOfCenarius);
 //        equipmentsList.add(bloodhoofRunespear);
 //
 //
-//        Equipment phyrixEmbrace = new Equipment("Phyrix's Embrace","RING","AC",2);
-//        Equipment sephuzSecret =new Equipment("Sephuz's Secret","RING","SCORE_STR",2);
-//        Equipment alythessPyrogenics = new Equipment("Alythess's Pyrogenics","RING","SCORE_CON",3);
-//        Equipment chatoyantSignet = new Equipment("Chatoyant Signet","RING","SCORE_WIS",5);
-//        Equipment dualDetermination = new Equipment("Dual Determination","RING","SCORE_CHA",5);
+//        game.Equipment phyrixEmbrace = new game.Equipment("Phyrix's Embrace","RING","AC",2);
+//        game.Equipment sephuzSecret =new game.Equipment("Sephuz's Secret","RING","SCORE_STR",2);
+//        game.Equipment alythessPyrogenics = new game.Equipment("Alythess's Pyrogenics","RING","SCORE_CON",3);
+//        game.Equipment chatoyantSignet = new game.Equipment("Chatoyant Signet","RING","SCORE_WIS",5);
+//        game.Equipment dualDetermination = new game.Equipment("Dual Determination","RING","SCORE_CHA",5);
 //        equipmentsList.add(phyrixEmbrace);
 //        equipmentsList.add(sephuzSecret);
 //        equipmentsList.add(alythessPyrogenics);

@@ -1,9 +1,9 @@
-Dice[QK, ZL, XQ, GB, SY]
+game.Dice[QK, ZL, XQ, GB, SY]
 +   roll(face:int) -> int sta
 +   roll(face:int, modifier:int) -> int sta
 +   roll(times:int, face:int, modifier:int) -> int sta
 
-Character
+game.Player
 +   ABILITY_STR:String sta
 +   ABILITY_...
 -   abilityScores:[String:Integer]
@@ -11,16 +11,16 @@ Character
 +   getAbilityModifier(name:String):Integer
 +   genrateAbilities()
 
--   backpack:[Equipment]
-+   equipmentsInBackpack() -> [Equipment]
+-   backpack:[game.Equipment]
++   equipmentsInBackpack() -> [game.Equipment]
 +   isBackpackFull() -> boolean
-+   pickUpEquipment(equipment:Equipment)
-+   dropEquipment(equipment:Equipment)
++   pickUpEquipment(equipment:game.Equipment)
++   dropEquipment(equipment:game.Equipment)
 
--   equipments:[String:Equipment]
-+   getEquipment(type:String) -> Equipment
-+   equip(equipment:Equipment)
-+   unequip(equipment:Equipment)
+-   equipments:[String:game.Equipment]
++   getEquipment(type:String) -> game.Equipment
++   equip(equipment:game.Equipment)
++   unequip(equipment:game.Equipment)
 -   enhancedValueOnEquipments(attribute:String) -> int
 
 -   level:int get set
@@ -33,10 +33,10 @@ Character
 +   getAttackBonus() -> int
 +   getDamageBonus() -> int
 
-Chest
--   equipment:Equipment get set
+game.Chest
+-   equipment:game.Equipment get set
 
-Equipment
+game.Equipment
 -   name:String get set
 -   type:String get set
 -   enhancedAttribute:String get set

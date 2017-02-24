@@ -1,3 +1,5 @@
+package game;
+
 import java.util.*;
 
 /**
@@ -8,7 +10,7 @@ import java.util.*;
  * @version 1.2
  *
  */
-public class Character {
+public class Player {
 
     /**
      * Abliblities and methods.
@@ -112,7 +114,7 @@ public class Character {
     /**
      * This method is used to get the equipment worn by the character based on the given name of the equipment type(slot).
      * @param type also the equipment slot
-     * @return Equipment
+     * @return game.Equipment
      */
     public Equipment getEquipment(String type) {
         return equipments.get(type);
@@ -231,7 +233,7 @@ public class Character {
     /**
      * Constructor without parameters.
      */
-    public Character() {
+    public Player() {
     }
 
     /**
@@ -239,7 +241,7 @@ public class Character {
      * @param level
      * @param name
      */
-    public Character(int level, String name) {
+    public Player(int level, String name) {
         this.level = level;
         this.name = name;
     }

@@ -1,7 +1,7 @@
-import java.util.LinkedList;
+package game;
 
 /**
- * this class is the Chest in the game
+ * this class is the game.Chest in the game
  * @author Li Zhen
  * @version 1.0
  */
@@ -10,7 +10,7 @@ public class Chest {
 
     /**
      * this method is to get equipment in the chest
-     * @return equipment Equipment
+     * @return equipment game.Equipment
      */
 
     public Equipment getEquipment() {
@@ -19,7 +19,7 @@ public class Chest {
 
     /**
      * this method is to set equipment in the chest
-     * @param equipment Equipment
+     * @param equipment game.Equipment
      */
 
 

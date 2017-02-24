@@ -1,5 +1,8 @@
-package game;
+package ui;
 
+import game.Equipment;
+import game.Player;
+import game.Simulation;
 import ui.EquipmentView;
 
 import javax.swing.*;

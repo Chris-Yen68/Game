@@ -38,6 +38,10 @@ public class Player {
         return ablilityScores.get(name);
     }
 
+    public Integer getTotalAbilityScore(String name){
+        return ablilityScores.get(name) + enhancedValueOnEquipments(name);
+    }
+
     /**
      * This method is used to calculate the modifiers for each ability score, based on the D20 formulas..
      * @param name String
@@ -132,8 +136,6 @@ public class Player {
         if (currentEquipment != null) {
             unequip(currentEquipment);
         }
-
-        ablilityScores.put(e.getEnhancedAttribute(), ablilityScores.get(e.getEnhancedAttribute()) + e.getEnhancedValue());
         equipments.put(type, e);
     }
 
@@ -143,8 +145,6 @@ public class Player {
      * @param e the equipment the character wants to unequip
      */
     public void unequip(Equipment e) {
-
-        ablilityScores.put(e.getEnhancedAttribute(), ablilityScores.get(e.getEnhancedAttribute()) - e.getEnhancedValue());
 
         backpack.add(e);
 
@@ -161,31 +161,10 @@ public class Player {
 
         int result = 0;
 
-        switch (attribute) {
-
-            case ATTRIBUTE_ARMOR_CLASS :
-                for (Equipment equipment : equipments.values()) {
-                    if (equipment.getEnhancedAttribute().equals(ATTRIBUTE_ARMOR_CLASS)){
-                        result += equipment.getEnhancedValue();
-                    }
-                }
-                break;
-
-            case ATTRIBUTE_ATTACK_BONUS :
-                for (Equipment equipment : equipments.values()) {
-                    if (equipment.getEnhancedAttribute().equals(ATTRIBUTE_ATTACK_BONUS)){
-                        result += equipment.getEnhancedValue();
-                    }
-                }
-                break;
-
-            case ATTRIBUTE_DAMAGE_BONUS :
-                for (Equipment equipment : equipments.values()) {
-                    if (equipment.getEnhancedAttribute().equals(ATTRIBUTE_DAMAGE_BONUS)){
-                        result += equipment.getEnhancedValue();
-                    }
-                }
-                break;
+        for (Equipment equipment : equipments.values()) {
+            if (equipment.getEnhancedAttribute().equals(attribute)){
+                result += equipment.getEnhancedValue();
+            }
         }
 
         return result;

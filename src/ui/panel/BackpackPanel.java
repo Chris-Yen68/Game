@@ -2,7 +2,6 @@ package ui.panel;
 
 import game.Equipment;
 import game.Player;
-import game.Simulation;
 import ui.view.EquipmentView;
 
 import javax.swing.*;
@@ -14,7 +13,7 @@ import java.util.List;
  * Created by Saki on 2017/2/24.
  */
 public class BackpackPanel extends JPanel{
-    private Player player = Simulation.newPlayer();
+    private Player player;
 
     public Player getPlayer() {
         return player;
@@ -60,13 +59,20 @@ public class BackpackPanel extends JPanel{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     player.equip(equipment);
-
+                    initSubviews();
                 }
             });
 
             dropButtton.setSize(60, 20);
             dropButtton.setLocation(380, y);
             this.add(dropButtton);
+            dropButtton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    player.dropEquipment(equipment);
+                    initSubviews();
+                }
+            });
 
             y += 30;
         }

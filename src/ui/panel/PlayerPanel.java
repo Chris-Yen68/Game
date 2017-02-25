@@ -300,52 +300,72 @@ public class PlayerPanel extends JPanel {
         unequipWeaponBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.unequip(player.getEquipment(Equipment.WEAPON));
+                Equipment currentEquipment = player.getEquipment(Equipment.WEAPON);
+                if (currentEquipment != null) {
+                    player.unequip(currentEquipment);
+                }
             }
         });
 
         unequipShieldBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.unequip(player.getEquipment(Equipment.SHIELD));
+                Equipment currentEquipment = player.getEquipment(Equipment.SHIELD);
+                if (currentEquipment != null) {
+                    player.unequip(currentEquipment);
+                }
             }
         });
 
         unequipArmorBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.unequip(player.getEquipment(Equipment.ARMOR));
+                Equipment currentEquipment = player.getEquipment(Equipment.ARMOR);
+                if (currentEquipment != null) {
+                    player.unequip(currentEquipment);
+                }
             }
         });
 
         unequipHelmetBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.unequip(player.getEquipment(Equipment.HELMET));
+                Equipment currentEquipment = player.getEquipment(Equipment.HELMET;
+                if (currentEquipment != null) {
+                    player.unequip(currentEquipment);
+                }
             }
         });
 
         unequipRingBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.unequip(player.getEquipment(Equipment.RING));
+                Equipment currentEquipment = player.getEquipment(Equipment.RING);
+                    if (currentEquipment != null) {
+                    player.unequip(currentEquipment);
+                }
             }
         });
 
         unequipBeltBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.unequip(player.getEquipment(Equipment.BELT));
+                Equipment currentEquipment = player.getEquipment(Equipment.BELT);
+                if (currentEquipment != null) {
+                    player.unequip(currentEquipment);
+                }
             }
         });
 
         unequipBootsBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.unequip(player.getEquipment(Equipment.BOOTS));
+                Equipment currentEquipment = player.getEquipment(Equipment.BOOTS);
+                if (currentEquipment != null) {
+                    player.unequip(currentEquipment);
+                }
             }
         });
-        
     }
 
     public void dataToView(){

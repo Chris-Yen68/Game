@@ -59,6 +59,7 @@ public class BackpackPanel extends JPanel{
             equipButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    player.equip(equipment);
 
                 }
             });

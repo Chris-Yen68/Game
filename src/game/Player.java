@@ -141,6 +141,7 @@ public class Player {
             unequip(currentEquipment);
         }
         equipments.put(type, e);
+        backpack.remove(e);
     }
 
     /**

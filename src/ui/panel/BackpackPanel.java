@@ -6,6 +6,8 @@ import game.Simulation;
 import ui.view.EquipmentView;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 /**
@@ -13,6 +15,14 @@ import java.util.List;
  */
 public class BackpackPanel extends JPanel{
     private Player player = Simulation.newPlayer();
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
     public BackpackPanel(){
         this.setLayout(null);
@@ -46,6 +56,12 @@ public class BackpackPanel extends JPanel{
             equipButton.setSize(60, 20);
             equipButton.setLocation(310, y);
             this.add(equipButton);
+            equipButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+
+                }
+            });
 
             dropButtton.setSize(60, 20);
             dropButtton.setLocation(380, y);

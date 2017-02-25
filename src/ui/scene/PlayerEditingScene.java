@@ -19,6 +19,14 @@ public class PlayerEditingScene extends View {
 
     private Player player;
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
     /**
      * Constructor.
      */
@@ -43,7 +51,7 @@ public class PlayerEditingScene extends View {
         back.setLocation(10, 10);
         title.add(back);
 
-        JLabel createItemLabel = new JLabel("Edit Character", JLabel.CENTER);
+        JLabel createItemLabel = new JLabel("Edit Player", JLabel.CENTER);
         createItemLabel.setSize(1000, 40);
         title.add(createItemLabel);
 
@@ -90,7 +98,7 @@ public class PlayerEditingScene extends View {
          */
         BackpackPanel backpackPanel = new BackpackPanel();
         backpackPanel.setLocation(440, 200);
-
+        backpackPanel.setPlayer(player);
         desktop.add(backpackPanel);
 
         repaint();
@@ -105,8 +113,8 @@ public class PlayerEditingScene extends View {
         setButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-
+                player.setLevel(Integer.valueOf(levelField.getText()));
+                playerPanel.dataToView();
             }
         });
     }

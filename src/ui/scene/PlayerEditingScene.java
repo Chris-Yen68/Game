@@ -15,8 +15,6 @@ import java.awt.event.ActionListener;
  */
 public class PlayerEditingScene extends View {
 
-
-
     private Player player;
 
     public Player getPlayer() {

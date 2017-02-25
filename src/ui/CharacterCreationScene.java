@@ -61,5 +61,13 @@ public class CharacterCreationScene  extends View {
                 CharacterCreationScene.this.viewFlow.pop();
             }
         });
+
+        createButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CharacterEditingScene characterEditingScene = new CharacterEditingScene();
+                CharacterCreationScene.this.viewFlow.push(characterEditingScene);
+            }
+        });
     }
 }

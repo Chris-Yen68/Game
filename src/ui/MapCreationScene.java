@@ -52,25 +52,47 @@ public class MapCreationScene extends View {
         sizeLabel.setLocation(20, 70);
         desktop.add(sizeLabel);
 
-        JLabel sizeSet = new JLabel("4 x 4");
+        JLabel sizeSet = new JLabel();
         sizeSet.setSize(200, 40);
         sizeSet.setLocation(150, 70);
+        sizeSet.setText("4 x 4");
         desktop.add(sizeSet);
 
-        JButton smallSize = new JButton("4 x 4");
+        JButton smallSize = new JButton();
         smallSize.setSize(100, 40);
         smallSize.setLocation(150, 120);
         desktop.add(smallSize);
+        smallSize.setText("4 x 4");
+        smallSize.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sizeSet.setText(smallSize.getText());
+            }
+        });
 
-        JButton mediumSize = new JButton("8 x 8");
+        JButton mediumSize = new JButton();
         mediumSize.setSize(100, 40);
         mediumSize.setLocation(260, 120);
         desktop.add(mediumSize);
+        mediumSize.setText("8 x 8");
+        mediumSize.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sizeSet.setText(mediumSize.getText());
+            }
+        });
 
-        JButton largeSize = new JButton("12 x 12");
+        JButton largeSize = new JButton();
         largeSize.setSize(100, 40);
         largeSize.setLocation(370, 120);
+        largeSize.setText("12 x 12");
         desktop.add(largeSize);
+        largeSize.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sizeSet.setText(largeSize.getText());
+            }
+        });
 
         JButton create = new JButton("Create");
         create.setSize(160, 40);

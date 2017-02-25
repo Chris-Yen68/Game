@@ -18,7 +18,7 @@ public class ItemCreationScene extends View {
     }
 
 
-    public void initSubviews() {
+    private void initSubviews() {
 
         JPanel title = new JPanel();
         title.setSize(1000, 40);

@@ -69,6 +69,7 @@ public class MapCreationScene extends View {
             @Override
             public void mouseClicked(MouseEvent e) {
                 sizeSet.setText(smallSize.getText());
+                desktop.repaint();
             }
 
             @Override
@@ -107,6 +108,7 @@ public class MapCreationScene extends View {
             @Override
             public void mouseClicked(MouseEvent e) {
                 sizeSet.setText(mediumSize.getText());
+                desktop.repaint();
             }
 
             @Override
@@ -145,6 +147,7 @@ public class MapCreationScene extends View {
             @Override
             public void mouseClicked(MouseEvent e) {
                 sizeSet.setText(largeSize.getText());
+                desktop.repaint();
             }
 
             @Override

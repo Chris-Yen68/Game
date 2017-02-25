@@ -23,7 +23,7 @@ public class BackpackPanel extends JPanel{
     }
 
     private void initSubviews(){
-        JLabel label = new JLabel("Backpack");
+        JLabel label = new JLabel("Backpack", JLabel.CENTER);
         label.setSize(460, 20);
         label.setLocation(0, 0);
         this.add(label);

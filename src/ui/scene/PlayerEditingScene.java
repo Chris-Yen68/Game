@@ -1,5 +1,6 @@
 package ui.scene;
 
+import game.Player;
 import ui.panel.BackpackPanel;
 import ui.panel.PlayerPanel;
 import ui.view.View;
@@ -12,13 +13,16 @@ import java.awt.event.ActionListener;
 /**
  * Created by Penelope on 17/2/24.
  */
-public class CharacterEditingScene extends View {
+public class PlayerEditingScene extends View {
 
+
+
+    private Player player;
 
     /**
      * Constructor.
      */
-    public CharacterEditingScene() {
+    public PlayerEditingScene() {
         setLayout(null);
         setSize(1000, 600);
 
@@ -78,6 +82,7 @@ public class CharacterEditingScene extends View {
          */
         PlayerPanel playerPanel = new PlayerPanel();
         playerPanel.setLocation(20, 120);
+        playerPanel.setPlayer(player);
         desktop.add(playerPanel);
 
         /**
@@ -85,6 +90,7 @@ public class CharacterEditingScene extends View {
          */
         BackpackPanel backpackPanel = new BackpackPanel();
         backpackPanel.setLocation(440, 200);
+
         desktop.add(backpackPanel);
 
         repaint();
@@ -92,7 +98,15 @@ public class CharacterEditingScene extends View {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CharacterEditingScene.this.viewFlow.pop();
+                PlayerEditingScene.this.viewFlow.pop();
+            }
+        });
+
+        setButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
             }
         });
     }

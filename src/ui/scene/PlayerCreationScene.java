@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
 /**
  * Created by Penelope on 17/2/24.
  */
-public class CharacterCreationScene  extends View {
-    public CharacterCreationScene() {
+public class PlayerCreationScene extends View {
+    public PlayerCreationScene() {
         setLayout(null);
         setSize(1000, 600);
 
@@ -60,15 +60,15 @@ public class CharacterCreationScene  extends View {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CharacterCreationScene.this.viewFlow.pop();
+                PlayerCreationScene.this.viewFlow.pop();
             }
         });
 
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CharacterEditingScene characterEditingScene = new CharacterEditingScene();
-                CharacterCreationScene.this.viewFlow.push(characterEditingScene);
+                PlayerEditingScene playerEditingScene = new PlayerEditingScene();
+                PlayerCreationScene.this.viewFlow.push(playerEditingScene);
             }
         });
     }

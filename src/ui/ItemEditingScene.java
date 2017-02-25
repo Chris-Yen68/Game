@@ -2,6 +2,8 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -9,17 +11,19 @@ import java.awt.event.MouseListener;
  * Created by GU_HAN on 2017-02-24.
  * @auther Guangbi Zhang
  */
-public class ItemEditingScene extends JFrame {
+public class ItemEditingScene extends View {
 
     private JLabel typeLabel;
     private JLabel enhanceOnLabel;
 
     public ItemEditingScene() {
+        setLayout(null);
+        setSize(1000, 600);
+
         initSubviews();
     }
 
     private void initSubviews(){
-        this.setLayout(null);
 
         /*
          * First Line
@@ -38,11 +42,11 @@ public class ItemEditingScene extends JFrame {
         label.setOpaque(true);
         this.add(label);
 
-        button = new JButton();
-        button.setSize(60, 20);
-        button.setLocation(10, 10);
-        button.setText("Back");
-        label.add(button);
+        JButton back = new JButton();
+        back.setSize(60, 20);
+        back.setLocation(10, 10);
+        back.setText("Back");
+        label.add(back);
 
         button = new JButton();
         button.setSize(60, 20);
@@ -656,6 +660,14 @@ public class ItemEditingScene extends JFrame {
         add(button);
 
         repaint();
+
+
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ItemEditingScene.this.viewFlow.pop();
+            }
+        });
     }
 
 }

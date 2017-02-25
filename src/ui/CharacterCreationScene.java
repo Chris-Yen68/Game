@@ -2,24 +2,21 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Penelope on 17/2/24.
  */
-public class CharacterCreationScene  extends JFrame {
-    public static void main(String[] args) {
-        new ItemCreationScene();
-    }
-
+public class CharacterCreationScene  extends View {
     public CharacterCreationScene() {
+        setLayout(null);
+        setSize(1000, 600);
+
         initSubviews();
     }
 
-    public void initSubviews() {
-        setSize(1000, 600);
-        setLocationRelativeTo(null);
-        setVisible(true);
-
+    private void initSubviews() {
         JPanel title = new JPanel();
         title.setSize(1000, 40);
         title.setLocation(0, 0);
@@ -57,5 +54,12 @@ public class CharacterCreationScene  extends JFrame {
         desktop.add(createButton);
 
         repaint();
+
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CharacterCreationScene.this.viewFlow.pop();
+            }
+        });
     }
 }

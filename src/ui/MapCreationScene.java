@@ -2,24 +2,21 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Penelope on 17/2/24.
  */
-public class MapCreationScene extends JFrame {
-    public static void main(String[] args) {
-        new MapCreationScene();
-    }
-
+public class MapCreationScene extends View {
     public MapCreationScene() {
+        setLayout(null);
+        setSize(1000, 600);
+
         initSubviews();
     }
 
-    public void initSubviews() {
-        setSize(1000, 600);
-        setLocationRelativeTo(null);
-        setVisible(true);
-
+    private void initSubviews() {
         JPanel title = new JPanel();
         title.setSize(1000, 40);
         title.setLocation(0, 0);
@@ -33,7 +30,6 @@ public class MapCreationScene extends JFrame {
 
         JLabel createMapLabel = new JLabel("Create Map", JLabel.CENTER);
         createMapLabel.setSize(1000, 40);
-//        editorLabel.setLocation(0, 0);
         title.add(createMapLabel);
 
         JPanel desktop = new JPanel();
@@ -60,9 +56,6 @@ public class MapCreationScene extends JFrame {
         sizeSet.setSize(200, 40);
         sizeSet.setLocation(150, 70);
         desktop.add(sizeSet);
-//        sizeSet.setText("4 x 4");
-//        sizeSet.setOpaque(true);
-//        sizeSet.setBackground(new Color(0xFFFFFF));
 
         JButton smallSize = new JButton("4 x 4");
         smallSize.setSize(100, 40);
@@ -85,5 +78,12 @@ public class MapCreationScene extends JFrame {
         desktop.add(create);
 
         repaint();
+
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MapCreationScene.this.viewFlow.pop();
+            }
+        });
     }
 }

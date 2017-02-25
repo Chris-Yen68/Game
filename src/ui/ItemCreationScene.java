@@ -2,6 +2,8 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Penelope on 17/2/24.
@@ -17,8 +19,6 @@ public class ItemCreationScene extends View {
 
 
     public void initSubviews() {
-//        setSize(1000, 600);
-//        setVisible(true);
 
         JPanel title = new JPanel();
         title.setSize(1000, 40);
@@ -33,7 +33,6 @@ public class ItemCreationScene extends View {
 
         JLabel createItemLabel = new JLabel("Create Item", JLabel.CENTER);
         createItemLabel.setSize(1000, 40);
-//        editorLabel.setLocation(0, 0);
         title.add(createItemLabel);
 
         JPanel desktop = new JPanel();
@@ -57,5 +56,20 @@ public class ItemCreationScene extends View {
         desktop.add(createButton);
 
         repaint();
+
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ItemCreationScene.this.viewFlow.pop();
+            }
+        });
+
+        createButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ItemEditingScene itemEditingScene = new ItemEditingScene();
+                ItemCreationScene.this.viewFlow.push(itemEditingScene);
+            }
+        });
     }
 }

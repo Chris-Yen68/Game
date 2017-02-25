@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
  * Created by Penelope on 17/2/24.
  */
 public class EditorScene extends View {
-
     public EditorScene() {
         setLayout(null);
         setSize(1000, 600);
@@ -19,9 +18,6 @@ public class EditorScene extends View {
 
 
     private void initSubviews() {
-
-        System.out.println("hahahahahah");
-
         JPanel title = new JPanel();
         title.setSize(1000, 40);
         title.setLocation(0, 0);
@@ -118,6 +114,22 @@ public class EditorScene extends View {
             public void actionPerformed(ActionEvent e) {
                 ItemCreationScene itemCreationScene = new ItemCreationScene();
                 EditorScene.this.viewFlow.push(itemCreationScene);
+            }
+        });
+
+        charaCreate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CharacterCreationScene characterCreationScene = new CharacterCreationScene();
+                EditorScene.this.viewFlow.push(characterCreationScene);
+            }
+        });
+
+        mapCreate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MapCreationScene mapCreationScene = new MapCreationScene();
+                EditorScene.this.viewFlow.push(mapCreationScene);
             }
         });
     }

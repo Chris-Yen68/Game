@@ -35,7 +35,7 @@ public class EquipmentView extends JPanel {
 
         JLabel label = new JLabel();
 
-        label = new JLabel();
+        label = new JLabel("", JLabel.RIGHT);
         label.setSize(60, 20);
         label.setLocation(0, 0);
         add(label);

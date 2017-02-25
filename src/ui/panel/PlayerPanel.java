@@ -70,23 +70,16 @@ public class PlayerPanel extends JPanel {
         EquipmentView equipmentView = new EquipmentView();
         Button button;
 
-        label = new JLabel();
+        label = new JLabel("", JLabel.CENTER);
         label.setSize(400, 20);
         label.setLocation(0, 0);
         add(label);
+        label.setText("Player");
         label.setBackground(new Color(200, 200, 200));
         JLabel titleBackground = new JLabel();
         titleBackground = label;
 
-        label = new JLabel();
-        label.setSize(100, 20);
-        label.setLocation(150, 0);
-        add(label);
-        label.setText("Player");
-        JLabel titleLabel = new JLabel();
-        titleLabel = label;
-
-        label = new JLabel();
+        label = new JLabel("", JLabel.RIGHT);
         label.setSize(60, 20);
         label.setLocation(10, 30);
         add(label);
@@ -100,7 +93,7 @@ public class PlayerPanel extends JPanel {
         add(label);
         nameValueLabel = label;
 
-        label = new JLabel();
+        label = new JLabel("", JLabel.RIGHT);
         label.setSize(60, 20);
         label.setLocation(190, 30);
         add(label);
@@ -150,7 +143,7 @@ public class PlayerPanel extends JPanel {
         abilityView.nameLabel.setText(Player.ABILITY_CHA);
         chaAbilityView = abilityView;
 
-        label = new JLabel();
+        label = new JLabel("", JLabel.RIGHT);
         label.setSize(100, 20);
         label.setLocation(10, 150);
         add(label);
@@ -164,7 +157,7 @@ public class PlayerPanel extends JPanel {
         add(label);
         hpValueLabel = label;
 
-        label = new JLabel();
+        label = new JLabel("", JLabel.RIGHT);
         label.setSize(100, 20);
         label.setLocation(190, 150);
         add(label);
@@ -178,7 +171,7 @@ public class PlayerPanel extends JPanel {
         add(label);
         abValueLabel = label;
 
-        label = new JLabel();
+        label = new JLabel("", JLabel.RIGHT);
         label.setSize(100, 20);
         label.setLocation(10, 180);
         add(label);
@@ -192,7 +185,7 @@ public class PlayerPanel extends JPanel {
         add(label);
         acValueLabel = label;
 
-        label = new JLabel();
+        label = new JLabel("", JLabel.RIGHT);
         label.setSize(100, 20);
         label.setLocation(190, 180);
         add(label);
@@ -330,7 +323,7 @@ public class PlayerPanel extends JPanel {
         unequipHelmetBotton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Equipment currentEquipment = player.getEquipment(Equipment.HELMET;
+                Equipment currentEquipment = player.getEquipment(Equipment.HELMET);
                 if (currentEquipment != null) {
                     player.unequip(currentEquipment);
                 }
@@ -420,8 +413,5 @@ public class PlayerPanel extends JPanel {
         }
 
     }
-    
-    
-
     
 }

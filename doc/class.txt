@@ -5,9 +5,18 @@ game.Dice[QK, ZL, XQ, GB, SY]
 
 game.Player
 +   ABILITY_STR:String sta
-+   ABILITY_...
++   ABILITY_DEX:String sta
++   ABILITY_CON:String sta
++   ABILITY_INT:String sta
++   ABILITY_WIS:String sta
++   ABILITY_CHA:String sta
++   ATTRIBUTE_ARMOR_CLASS:String sta
++   ATTRIBUTE_ATTACK_BONUS:String sta
++   ATTRIBUTE_DAMAGE_BONUS:String sta
+
 -   abilityScores:[String:Integer]
 +   getAbilityScore(name:String):Integer
++   getTotalAbilityScore(name:String):Integer
 +   getAbilityModifier(name:String):Integer
 +   genrateAbilities()
 
@@ -26,6 +35,8 @@ game.Player
 -   level:int get set
 -   name:String get set
 
++   Player(level:int, name:String)
+
 -   hp:int get set
 +   generateHp()
 
@@ -37,13 +48,26 @@ game.Chest
 -   equipment:game.Equipment get set
 
 game.Equipment
++   HELMET:String sta
++   ARMOR:String sta
++   SHIELD:String sta
++   RING:String sta
++   BELT:String sta
++   BOOTS:String sta
++   WEAPON:String sta
+
 -   name:String get set
 -   type:String get set
 -   enhancedAttribute:String get set
 -   enhancedValue:get set
+
++   Equipment(name:String, type:String, enhancedAttribute:String, enhancedValue:int)
 +   validate() -> boolean
     //  enhancedAttribute type
 
+game.Simulation
++   newPlayer() -> Player sta
++   equipments21() -> [game.Equipment] sta
 
 Point
 -   x:int get set

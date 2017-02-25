@@ -18,8 +18,13 @@ public class PlayerPanelDemo extends JFrame {
     }
     public PlayerPanelDemo(){
         PlayerPanel playerPanel = new PlayerPanel();
-        this.add(playerPanel);
+        playerPanel.setLocation(0, 20);
 
         playerPanel.setPlayer(Simulation.newPlayer());
+        playerPanel.dataToView();
+
+        this.add(playerPanel);
+
+
     }
 }

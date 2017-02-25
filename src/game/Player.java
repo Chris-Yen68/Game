@@ -65,6 +65,8 @@ public class Player {
         ablilityScores.put(ABILITY_CHA, Dice.rool(4, 6, 0));
     }
 
+
+
     /**
      * Backpack and methods.
      */
@@ -109,6 +111,8 @@ public class Player {
         backpack.remove(e);
     }
 
+
+
     /**
      * Equipments and methods.
      */
@@ -116,7 +120,7 @@ public class Player {
     private Map<String, Equipment> equipments = new HashMap<>();
 
     /**
-     * This method is used to get the equipment worn by the character based on the given name of the equipment type(slot).
+     * This method is used to get the equipment worn by the character based on the given type(slot).
      * @param type also the equipment slot
      * @return game.Equipment
      */
@@ -126,7 +130,7 @@ public class Player {
 
     /**
      * This method is used to equip the equipment on the character.
-     * The equip action will replace the current one on the same slot and also change the ability scores of the character.
+     * The equip action will replace the current one on the same slot.
      * @param e the equipment the character wants to equip, which is picked from backpack.
      */
     public void equip(Equipment e) {
@@ -140,14 +144,12 @@ public class Player {
     }
 
     /**
-     * This method is used to unequip the current equipment.
-     * The unequip action will change the ability scores of the character, and the equipment will be put into backpack.
+     * This method is used to unequip the current equipment which will be put into backpack.
      * @param e the equipment the character wants to unequip
      */
     public void unequip(Equipment e) {
 
         backpack.add(e);
-
         String type = e.getType();
         equipments.remove(type);
     }

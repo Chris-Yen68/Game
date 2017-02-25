@@ -32,13 +32,14 @@ public class PlayerPanel extends JPanel {
         this.setLayout(null);
         this.setSize(400, 420);
 
-
+        initSubviews();
     }
 
     /**
      * Layout
      */
 
+    public JLabel nameValueLabel;
     public JLabel levelValueLabel;
     public AbilityView strAbilityView;
     public AbilityView intAbilityView;
@@ -66,7 +67,7 @@ public class PlayerPanel extends JPanel {
         Button button;
 
         label = new JLabel();
-        label.setSize(400, 200);
+        label.setSize(400, 20);
         label.setLocation(0, 0);
         add(label);
         label.setBackground(new Color(200, 200, 200));
@@ -86,15 +87,13 @@ public class PlayerPanel extends JPanel {
         label.setLocation(10, 30);
         add(label);
         label.setText("Name");
-        JLabel nameLable = new JLabel();
-        nameLable = label;
+        JLabel nameLabel = new JLabel();
+        nameLabel = label;
 
         label = new JLabel();
         label.setSize(90, 20);
         label.setLocation(80, 30);
         add(label);
-        label.setText(player.getName());
-        JLabel nameValueLabel = new JLabel();
         nameValueLabel = label;
 
         label = new JLabel();
@@ -102,23 +101,20 @@ public class PlayerPanel extends JPanel {
         label.setLocation(190, 30);
         add(label);
         label.setText("Level");
-        JLabel levelLable = new JLabel();
-        levelLable = label;
+        JLabel levelLabel = new JLabel();
+        levelLabel = label;
 
         label = new JLabel();
         label.setSize(40, 20);
         label.setLocation(260, 30);
         add(label);
         levelValueLabel = label;
-//        levelValueLabel.setText(player.getLevel() + "")
-//        这条写在set按钮的event里面去
 
         abilityView = new AbilityView();
         abilityView.setLocation(10, 60);
         add(abilityView);
         abilityView.nameLabel.setText(Player.ABILITY_STR);
         strAbilityView = abilityView;
-//        generate按钮的event，再去做ablilityView里其他两个label的setText
 
         abilityView = new AbilityView();
         abilityView.setLocation(190, 60);
@@ -163,8 +159,6 @@ public class PlayerPanel extends JPanel {
         label.setLocation(120, 150);
         add(label);
         hpValueLabel = label;
-//        hpValueLabel.setText(player.getHp() + "");
-//      写到gerenate按钮event
 
         label = new JLabel();
         label.setSize(100, 20);
@@ -179,8 +173,6 @@ public class PlayerPanel extends JPanel {
         label.setLocation(300, 150);
         add(label);
         abValueLabel = label;
-//        abValueLabel.setText(player.getHp() + "");
-//      写到gerenate按钮event
 
         label = new JLabel();
         label.setSize(100, 20);
@@ -195,8 +187,6 @@ public class PlayerPanel extends JPanel {
         label.setLocation(120, 180);
         add(label);
         acValueLabel = label;
-//        acValueLabel.setText(player.getHp() + "");
-//      写到gerenate按钮event
 
         label = new JLabel();
         label.setSize(100, 20);
@@ -211,8 +201,6 @@ public class PlayerPanel extends JPanel {
         label.setLocation(300, 180);
         add(label);
         dbValueLabel = label;
-//        dbValueLabel.setText(player.getHp() + "");
-//      写到gerenate按钮event
 
         equipmentView = new EquipmentView();
         equipmentView.setLocation(10, 210);
@@ -224,43 +212,143 @@ public class PlayerPanel extends JPanel {
         button.setSize(60, 20);
         button.setLocation(320, 210);
         add(button);
-        Button unequipHelmetBotton = new Button();
-        unequipHelmetBotton = button;
+        Button unequipWeaponBotton = new Button();
+        unequipWeaponBotton = button;
 
         equipmentView = new EquipmentView();
         equipmentView.setLocation(10, 240);
         add(equipmentView);
-        weaponEquipmentView = equipmentView;
+        equipmentView.typeLabel.setText(Equipment.SHIELD);
+        shieldEquipmentView = equipmentView;
+
+        button = new Button("unequip");
+        button.setSize(60, 20);
+        button.setLocation(320, 240);
+        add(button);
+        Button unequipShieldBotton = new Button();
+        unequipShieldBotton = button;
 
         equipmentView = new EquipmentView();
         equipmentView.setLocation(10, 270);
         add(equipmentView);
-        weaponEquipmentView = equipmentView;
+        equipmentView.typeLabel.setText(Equipment.ARMOR);
+        armorEquipmentView = equipmentView;
+
+        button = new Button("unequip");
+        button.setSize(60, 20);
+        button.setLocation(320, 270);
+        add(button);
+        Button unequipArmorBotton = new Button();
+        unequipArmorBotton = button;
 
         equipmentView = new EquipmentView();
         equipmentView.setLocation(10, 300);
         add(equipmentView);
-        weaponEquipmentView = equipmentView;
+        equipmentView.typeLabel.setText(Equipment.HELMET);
+        helmetEquipmentView = equipmentView;
+
+        button = new Button("unequip");
+        button.setSize(60, 20);
+        button.setLocation(320, 300);
+        add(button);
+        Button unequipHelmetBotton = new Button();
+        unequipHelmetBotton = button;
 
         equipmentView = new EquipmentView();
         equipmentView.setLocation(10, 330);
         add(equipmentView);
-        weaponEquipmentView = equipmentView;
+        equipmentView.typeLabel.setText(Equipment.RING);
+        ringEquipmentView = equipmentView;
+
+        button = new Button("unequip");
+        button.setSize(60, 20);
+        button.setLocation(320, 330);
+        add(button);
+        Button unequipRingBotton = new Button();
+        unequipRingBotton = button;
 
         equipmentView = new EquipmentView();
         equipmentView.setLocation(10, 360);
         add(equipmentView);
-        weaponEquipmentView = equipmentView;
+        equipmentView.typeLabel.setText(Equipment.BELT);
+        beltEquipmentView = equipmentView;
+
+        button = new Button("unequip");
+        button.setSize(60, 20);
+        button.setLocation(320, 360);
+        add(button);
+        Button unequipBeltBotton = new Button();
+        unequipBeltBotton = button;
 
         equipmentView = new EquipmentView();
         equipmentView.setLocation(10, 390);
         add(equipmentView);
-        weaponEquipmentView = equipmentView;
+        equipmentView.typeLabel.setText(Equipment.BOOTS);
+        bootsEquipmentView = equipmentView;
+
+        button = new Button("unequip");
+        button.setSize(60, 20);
+        button.setLocation(320, 390);
+        add(button);
+        Button unequipBootsBotton = new Button();
+        unequipBootsBotton = button;
         
         
         
     }
-    
+
+    public void dataToView(){
+        nameValueLabel.setText(player.getName());
+        levelValueLabel.setText(player.getLevel() + "");
+
+        strAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_STR) + "");
+        intAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_INT) + "");
+        dexAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_DEX) + "");
+        wisAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_WIS) + "");
+        conAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CON) + "");
+        chaAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CHA) + "");
+
+        hpValueLabel.setText(player.getHp() + "");
+        abValueLabel.setText(player.getAttackBonus() + "");
+        acValueLabel.setText(player.getArmorClass() + "");
+        dbValueLabel.setText(player.getDamageBonus() + "");
+
+        Equipment weapon = player.getEquipment(Equipment.WEAPON);
+        if (weapon != null) {
+            weaponEquipmentView.setEquipment(weapon);
+        }
+
+        Equipment shield = player.getEquipment(Equipment.SHIELD);
+        if (shield != null) {
+            shieldEquipmentView.setEquipment(shield);
+        }
+
+        Equipment armor = player.getEquipment(Equipment.ARMOR);
+        if (armor != null) {
+            armorEquipmentView.setEquipment(armor);
+        }
+
+        Equipment helmet = player.getEquipment(Equipment.HELMET);
+        if (helmet != null) {
+            helmetEquipmentView.setEquipment(helmet);
+        }
+
+        Equipment ring = player.getEquipment(Equipment.RING);
+        if (ring != null) {
+            ringEquipmentView.setEquipment(ring);
+        }
+
+        Equipment belt = player.getEquipment(Equipment.BELT);
+        if (belt != null) {
+            beltEquipmentView.setEquipment(belt);
+        }
+
+        Equipment boots = player.getEquipment(Equipment.BOOTS);
+        if (boots != null) {
+            bootsEquipmentView.setEquipment(boots);
+        }
+
+    }
     
     
     

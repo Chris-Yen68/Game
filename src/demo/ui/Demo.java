@@ -1,5 +1,6 @@
-package ui.scene;
+package demo.ui;
 
+import ui.scene.MainScene;
 import ui.view.ViewFlow;
 import ui.view.Window;
 

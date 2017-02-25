@@ -36,7 +36,7 @@ public class ViewFlow extends View {
             this.remove(view);
             contentViews.remove(view);
 //            contentViews.get(contentViews.size() - 1).setVisible(true);
-//            contentViews.add(contentViews.get(contentViews.size() - 1));
+            contentViews.add(contentViews.get(contentViews.size() - 1));
         }
 
         if (contentViews.size() > 0) {

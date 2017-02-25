@@ -14,20 +14,6 @@ import java.util.*;
  * Created by Penelope on 17/2/24.
  */
 public class CharacterEditingScene extends View {
-    /**
-     * The attribute player and Getter & Setter.
-     */
-    private Player player;
-//    private Player player = Simulation.newPlayer();
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
 
 
     /**
@@ -38,6 +24,7 @@ public class CharacterEditingScene extends View {
         setSize(1000, 600);
 
         initSubviews();
+        dataToView();
     }
 
 
@@ -405,56 +392,74 @@ public class CharacterEditingScene extends View {
         });
     }
 
-//    public void dataToView() {
-//        nameValueLabel.setText(player.getName());
-//        levelValueLabel.setText(player.getLevel() + "");
-//
-//        strAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_STR) + "");
-//        intAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_INT) + "");
-//        dexAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_DEX) + "");
-//        wisAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_WIS) + "");
-//        conAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CON) + "");
-//        chaAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CHA) + "");
-//
-//        hpValueLabel.setText(player.getHp() + "");
-//        abValueLabel.setText(player.getAttackBonus() + "");
-//        acValueLabel.setText(player.getArmorClass() + "");
-//        dbValueLabel.setText(player.getDamageBonus() + "");
-//
-//        Equipment weapon = player.getEquipment(Equipment.WEAPON);
-//        if (weapon != null) {
-//            weaponEquipmentView.setEquipment(weapon);
-//        }
-//
-//        Equipment shield = player.getEquipment(Equipment.SHIELD);
-//        if (shield != null) {
-//            shieldEquipmentView.setEquipment(shield);
-//        }
-//
-//        Equipment armor = player.getEquipment(Equipment.ARMOR);
-//        if (armor != null) {
-//            armorEquipmentView.setEquipment(armor);
-//        }
-//
-//        Equipment helmet = player.getEquipment(Equipment.HELMET);
-//        if (helmet != null) {
-//            helmetEquipmentView.setEquipment(helmet);
-//        }
-//
-//        Equipment ring = player.getEquipment(Equipment.RING);
-//        if (ring != null) {
-//            ringEquipmentView.setEquipment(ring);
-//        }
-//
-//        Equipment belt = player.getEquipment(Equipment.BELT);
-//        if (belt != null) {
-//            beltEquipmentView.setEquipment(belt);
-//        }
-//
-//        Equipment boots = player.getEquipment(Equipment.BOOTS);
-//        if (boots != null) {
-//            bootsEquipmentView.setEquipment(boots);
-//        }
-//    }
+
+    /**
+     * The attribute player and Getter & Setter.
+     */
+    private Player player;
+//    private Player player = Simulation.newPlayer();
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+
+    private void dataToView(){
+        nameValueLabel.setText(player.getName());
+        levelValueLabel.setText(player.getLevel() + "");
+
+        strAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_STR) + "");
+        intAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_INT) + "");
+        dexAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_DEX) + "");
+        wisAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_WIS) + "");
+        conAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CON) + "");
+        chaAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CHA) + "");
+
+        hpValueLabel.setText(player.getHp() + "");
+        abValueLabel.setText(player.getAttackBonus() + "");
+        acValueLabel.setText(player.getArmorClass() + "");
+        dbValueLabel.setText(player.getDamageBonus() + "");
+
+        Equipment weapon = player.getEquipment(Equipment.WEAPON);
+        if (weapon != null) {
+            weaponEquipmentView.setEquipment(weapon);
+        }
+
+        Equipment shield = player.getEquipment(Equipment.SHIELD);
+        if (shield != null) {
+            shieldEquipmentView.setEquipment(shield);
+        }
+
+        Equipment armor = player.getEquipment(Equipment.ARMOR);
+        if (armor != null) {
+            armorEquipmentView.setEquipment(armor);
+        }
+
+        Equipment helmet = player.getEquipment(Equipment.HELMET);
+        if (helmet != null) {
+            helmetEquipmentView.setEquipment(helmet);
+        }
+
+        Equipment ring = player.getEquipment(Equipment.RING);
+        if (ring != null) {
+            ringEquipmentView.setEquipment(ring);
+        }
+
+        Equipment belt = player.getEquipment(Equipment.BELT);
+        if (belt != null) {
+            beltEquipmentView.setEquipment(belt);
+        }
+
+        Equipment boots = player.getEquipment(Equipment.BOOTS);
+        if (boots != null) {
+            bootsEquipmentView.setEquipment(boots);
+        }
+
+    }
+
 }
 

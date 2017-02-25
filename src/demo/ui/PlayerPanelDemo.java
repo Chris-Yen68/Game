@@ -1,8 +1,7 @@
 package demo.ui;
 
-import game.Player;
 import game.Simulation;
-import ui.PlayerPanel;
+import ui.panel.PlayerPanel;
 
 import javax.swing.*;
 

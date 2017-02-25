@@ -1,4 +1,6 @@
-package ui;
+package ui.scene;
+
+import ui.view.View;
 
 import javax.swing.*;
 import java.awt.*;

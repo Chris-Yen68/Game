@@ -1,4 +1,6 @@
-package ui;
+package ui.scene;
+
+import ui.view.View;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +10,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Penelope on 17/2/24.
  */
-public class MainScene extends View{
+public class MainScene extends View {
 
     public MainScene() {
         setLayout(null);

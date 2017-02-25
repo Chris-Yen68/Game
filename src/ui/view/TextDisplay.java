@@ -1,4 +1,4 @@
-package ui;
+package ui.view;
 
 /**
  * Created by Saki on 2017/2/24.

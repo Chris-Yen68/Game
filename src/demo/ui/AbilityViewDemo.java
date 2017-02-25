@@ -1,9 +1,6 @@
 package demo.ui;
 
-import game.Equipment;
-import game.Player;
-import ui.AbilityView;
-import ui.EquipmentView;
+import ui.view.AbilityView;
 
 import javax.swing.*;
 

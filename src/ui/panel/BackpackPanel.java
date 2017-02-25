@@ -1,12 +1,11 @@
-package ui;
+package ui.panel;
 
 import game.Equipment;
 import game.Player;
 import game.Simulation;
-import ui.EquipmentView;
+import ui.view.EquipmentView;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.List;
 
 /**

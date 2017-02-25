@@ -1,6 +1,6 @@
 package demo.ui;
 
-import ui.BackpackPanel;
+import ui.panel.BackpackPanel;
 
 import javax.swing.*;
 

@@ -1,14 +1,13 @@
-package ui;
+package ui.scene;
 
-import game.Equipment;
-import game.Player;
-import game.Simulation;
+import ui.panel.BackpackPanel;
+import ui.panel.PlayerPanel;
+import ui.view.View;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
 
 /**
  * Created by Penelope on 17/2/24.

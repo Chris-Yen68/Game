@@ -1,7 +1,9 @@
-package ui;
+package ui.panel;
 
 import game.Equipment;
 import game.Player;
+import ui.view.AbilityView;
+import ui.view.EquipmentView;
 
 import javax.swing.*;
 import java.awt.*;

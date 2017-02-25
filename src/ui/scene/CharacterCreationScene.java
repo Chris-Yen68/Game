@@ -1,4 +1,6 @@
-package ui;
+package ui.scene;
+
+import ui.view.View;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,18 +10,15 @@ import java.awt.event.ActionListener;
 /**
  * Created by Penelope on 17/2/24.
  */
-public class ItemCreationScene extends View {
-
-    public ItemCreationScene() {
+public class CharacterCreationScene  extends View {
+    public CharacterCreationScene() {
         setLayout(null);
         setSize(1000, 600);
 
         initSubviews();
     }
 
-
     private void initSubviews() {
-
         JPanel title = new JPanel();
         title.setSize(1000, 40);
         title.setLocation(0, 0);
@@ -31,9 +30,10 @@ public class ItemCreationScene extends View {
         back.setLocation(10, 10);
         title.add(back);
 
-        JLabel createItemLabel = new JLabel("Create Item", JLabel.CENTER);
-        createItemLabel.setSize(1000, 40);
-        title.add(createItemLabel);
+        JLabel createCharaLabel = new JLabel("Create Character", JLabel.CENTER);
+        createCharaLabel.setSize(1000, 40);
+//        editorLabel.setLocation(0, 0);
+        title.add(createCharaLabel);
 
         JPanel desktop = new JPanel();
         desktop.setSize(1000, 540);
@@ -60,15 +60,15 @@ public class ItemCreationScene extends View {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ItemCreationScene.this.viewFlow.pop();
+                CharacterCreationScene.this.viewFlow.pop();
             }
         });
 
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ItemEditingScene itemEditingScene = new ItemEditingScene();
-                ItemCreationScene.this.viewFlow.push(itemEditingScene);
+                CharacterEditingScene characterEditingScene = new CharacterEditingScene();
+                CharacterCreationScene.this.viewFlow.push(characterEditingScene);
             }
         });
     }

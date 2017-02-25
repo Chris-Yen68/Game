@@ -1,6 +1,7 @@
-package ui;
+package ui.scene;
 
-import javax.swing.*;
+import ui.view.ViewFlow;
+import ui.view.Window;
 
 /**
  * Created by Penelope on 17/2/24.

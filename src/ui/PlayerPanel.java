@@ -5,6 +5,8 @@ import game.Player;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Kai QI on 2017/2/24.
@@ -39,25 +41,25 @@ public class PlayerPanel extends JPanel {
      * Layout
      */
 
-    public JLabel nameValueLabel;
-    public JLabel levelValueLabel;
-    public AbilityView strAbilityView;
-    public AbilityView intAbilityView;
-    public AbilityView dexAbilityView;
-    public AbilityView wisAbilityView;
-    public AbilityView conAbilityView;
-    public AbilityView chaAbilityView;    
-    public JLabel hpValueLabel;
-    public JLabel abValueLabel;
-    public JLabel acValueLabel;
-    public JLabel dbValueLabel;
-    public EquipmentView weaponEquipmentView;
-    public EquipmentView shieldEquipmentView;
-    public EquipmentView armorEquipmentView;
-    public EquipmentView helmetEquipmentView;
-    public EquipmentView ringEquipmentView;
-    public EquipmentView beltEquipmentView;
-    public EquipmentView bootsEquipmentView;
+    private JLabel nameValueLabel;
+    private JLabel levelValueLabel;
+    private AbilityView strAbilityView;
+    private AbilityView intAbilityView;
+    private AbilityView dexAbilityView;
+    private AbilityView wisAbilityView;
+    private AbilityView conAbilityView;
+    private AbilityView chaAbilityView;
+    private JLabel hpValueLabel;
+    private JLabel abValueLabel;
+    private JLabel acValueLabel;
+    private JLabel dbValueLabel;
+    private EquipmentView weaponEquipmentView;
+    private EquipmentView shieldEquipmentView;
+    private EquipmentView armorEquipmentView;
+    private EquipmentView helmetEquipmentView;
+    private EquipmentView ringEquipmentView;
+    private EquipmentView beltEquipmentView;
+    private EquipmentView bootsEquipmentView;
 
     private void initSubviews(){
 
@@ -292,8 +294,55 @@ public class PlayerPanel extends JPanel {
         add(button);
         Button unequipBootsBotton = new Button();
         unequipBootsBotton = button;
-        
-        
+
+        unequipWeaponBotton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                player.unequip(player.getEquipment(Equipment.WEAPON));
+            }
+        });
+
+        unequipShieldBotton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                player.unequip(player.getEquipment(Equipment.SHIELD));
+            }
+        });
+
+        unequipArmorBotton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                player.unequip(player.getEquipment(Equipment.ARMOR));
+            }
+        });
+
+        unequipHelmetBotton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                player.unequip(player.getEquipment(Equipment.HELMET));
+            }
+        });
+
+        unequipRingBotton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                player.unequip(player.getEquipment(Equipment.RING));
+            }
+        });
+
+        unequipBeltBotton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                player.unequip(player.getEquipment(Equipment.BELT));
+            }
+        });
+
+        unequipBootsBotton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                player.unequip(player.getEquipment(Equipment.BOOTS));
+            }
+        });
         
     }
 

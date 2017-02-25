@@ -69,20 +69,18 @@ game.Simulation
 +   newPlayer() -> Player sta
 +   equipments21() -> [game.Equipment] sta
 
-Point
+map.Point
 -   x:int get set
 -   y:int get set
 +   add(delta:Point) -> Point
 +   directions() -> [Point] sta
 
-
-
-
-GameMap
--   name:String get set
-
+map.GameMap
 -   size:int get set
 -   cells:[[Cell]]
+-   name:String get set
+-   exitPoint:Point get
+-   enterPoint:Point get
 
 +   addContent(content:Content, location:Point)
 +   removeContent(location:Point)
@@ -92,24 +90,30 @@ GameMap
 
 +   getCell(location:Point) -> Cell
 
--   exitPoint:Point get
--   enterPoint:Point get
-
 +   bfsSearch(source:Point, int depth) -> [Cell]
 
-Cell
+map.Cell
 +   location:Point
 +   content:Content
 
-MapValidator
+map.MapValidator
 +   validate() -> boolean
 
-MapValidatorEntrance : MapValidator
-MapValidatorExit : MapValidator
-MapValidatorInterConnection : MapValidator
+map.validate.MapValidatorEntrance : MapValidator
+map.validate.MapValidatorExit : MapValidator
+map.validate.MapValidatorInterConnection : MapValidator
 
+ui.view.AbilityView : JPanel
++   nameLabel:JLabel
++   scoreLabel:JLabel
++   modifierLabel: JLabel
 
-
+ui.view.EquipmentView : JPanel
+-   equipment:game.Equipment get set
++   typeLabel:JLabel
++   nameLabel:JLabel
++   enhanceLabel:JLabel
+-   dataToView()
 
 
 

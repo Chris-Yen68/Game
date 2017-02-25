@@ -30,7 +30,7 @@ public class PlayerCreationScene extends View {
         back.setLocation(10, 10);
         title.add(back);
 
-        JLabel createCharaLabel = new JLabel("Create Character", JLabel.CENTER);
+        JLabel createCharaLabel = new JLabel("Create Player", JLabel.CENTER);
         createCharaLabel.setSize(1000, 40);
 //        editorLabel.setLocation(0, 0);
         title.add(createCharaLabel);

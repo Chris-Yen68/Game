@@ -47,7 +47,7 @@ public class EditorScene extends View {
         itemLabel.setLocation(20, 20);
         desktop.add(itemLabel);
 
-        JLabel charaLabel = new JLabel("Character");
+        JLabel charaLabel = new JLabel("Player");
         charaLabel.setSize(160, 40);
         charaLabel.setLocation(210, 20);
         desktop.add(charaLabel);

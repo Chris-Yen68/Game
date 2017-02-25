@@ -122,8 +122,8 @@ public class EditorScene extends View {
         charaCreate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CharacterCreationScene characterCreationScene = new CharacterCreationScene();
-                EditorScene.this.viewFlow.push(characterCreationScene);
+                PlayerCreationScene playerCreationScene = new PlayerCreationScene();
+                EditorScene.this.viewFlow.push(playerCreationScene);
             }
         });
 

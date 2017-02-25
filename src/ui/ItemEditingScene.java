@@ -42,11 +42,17 @@ public class ItemEditingScene extends View {
         label.setOpaque(true);
         this.add(label);
 
-        JButton back = new JButton();
-        back.setSize(60, 20);
-        back.setLocation(10, 10);
-        back.setText("Back");
-        label.add(back);
+        button = new JButton();
+        button.setSize(60, 20);
+        button.setLocation(10, 10);
+        button.setText("Back");
+        label.add(button);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ItemEditingScene.this.viewFlow.pop();
+            }
+        });
 
         button = new JButton();
         button.setSize(60, 20);
@@ -662,12 +668,6 @@ public class ItemEditingScene extends View {
         repaint();
 
 
-        back.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ItemEditingScene.this.viewFlow.pop();
-            }
-        });
     }
 
 }

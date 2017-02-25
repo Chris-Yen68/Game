@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Created by Penelope on 17/2/24.
@@ -63,36 +65,115 @@ public class MapCreationScene extends View {
         smallSize.setLocation(150, 120);
         desktop.add(smallSize);
         smallSize.setText("4 x 4");
-        smallSize.addActionListener(new ActionListener() {
+        smallSize.addMouseListener(new MouseListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 sizeSet.setText(smallSize.getText());
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
             }
         });
 
-        JButton mediumSize = new JButton();
+//        smallSize.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                sizeSet.setText(smallSize.getText());
+//            }
+//        });
+
+        JButton mediumSize = new JButton("8 x 8");
         mediumSize.setSize(100, 40);
         mediumSize.setLocation(260, 120);
         desktop.add(mediumSize);
-        mediumSize.setText("8 x 8");
-        mediumSize.addActionListener(new ActionListener() {
+        mediumSize.addMouseListener(new MouseListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 sizeSet.setText(mediumSize.getText());
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
             }
         });
 
-        JButton largeSize = new JButton();
+//        mediumSize.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                sizeSet.setText(mediumSize.getText());
+//            }
+//        });
+
+        JButton largeSize = new JButton("12 x 12");
         largeSize.setSize(100, 40);
         largeSize.setLocation(370, 120);
-        largeSize.setText("12 x 12");
         desktop.add(largeSize);
-        largeSize.addActionListener(new ActionListener() {
+        largeSize.addMouseListener(new MouseListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 sizeSet.setText(largeSize.getText());
             }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
         });
+
+//        largeSize.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                sizeSet.setText(largeSize.getText());
+//            }
+//        });
 
         JButton create = new JButton("Create");
         create.setSize(160, 40);

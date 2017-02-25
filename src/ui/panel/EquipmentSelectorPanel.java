@@ -59,6 +59,12 @@ public class EquipmentSelectorPanel extends JPanel {
                         JButton addButton = new JButton("Add");
                         addButton.setLocation(450,yOfView);
                         addButton.setSize(60,20);
+                        addButton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                player.pickUpEquipment(equipment);
+                            }
+                        });
                         EquipmentSelectorPanel.this.add(equipmentView);
                         EquipmentSelectorPanel.this.add(addButton);
                         

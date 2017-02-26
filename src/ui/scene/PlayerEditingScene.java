@@ -3,6 +3,7 @@ package ui.scene;
 import game.Player;
 import game.Simulation;
 import ui.panel.BackpackPanel;
+import ui.panel.EquipmentSelectorPanel;
 import ui.panel.PlayerPanel;
 import ui.view.View;
 
@@ -104,6 +105,13 @@ public class PlayerEditingScene extends View {
         backpackPanel = new BackpackPanel();
         backpackPanel.setLocation(440, 200);
         desktop.add(backpackPanel);
+
+        /**
+         * Equipment Selector Panel
+         */
+        EquipmentSelectorPanel equipmentSelectorPanel = new EquipmentSelectorPanel();
+        equipmentSelectorPanel.setLocation(440, 20);
+        desktop.add(equipmentSelectorPanel);
 
         repaint();
 

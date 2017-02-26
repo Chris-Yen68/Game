@@ -16,7 +16,7 @@ import java.util.Observer;
  * @author Qi Xia
  */
 public class BackpackPanel extends JPanel implements Observer{
-    private Player player;
+    private Player player = Simulation.newPlayer();
 
     public Player getPlayer() {
         return player;
@@ -24,6 +24,8 @@ public class BackpackPanel extends JPanel implements Observer{
 
     public void setPlayer(Player player) {
         this.player = player;
+        dataToView();
+        player.addObserver(this);
     }
 
     public BackpackPanel(){

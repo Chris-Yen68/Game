@@ -9,11 +9,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * @author Qi Xia
  */
-public class BackpackPanel extends JPanel{
+public class BackpackPanel extends JPanel implements Observer{
     private Player player = Simulation.newPlayer();
 
     public Player getPlayer() {
@@ -38,7 +40,18 @@ public class BackpackPanel extends JPanel{
         this.add(label);
     }
 
-    public void dataToView(){
+    @Override
+    public void update(Observable observer, Object x) {
+
+        boolean change = false;
+        change = change || x.equals(Player.BACKPACK_CHANGE);
+
+        if (change) {
+            viewToData();
+        }
+    }
+
+    public void viewToData(){
         int x = 10;
         int y = 30;
 
@@ -61,7 +74,7 @@ public class BackpackPanel extends JPanel{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     player.equip(equipment);
-                    initSubviews();
+                    update(player, backpack);
                 }
             });
 
@@ -72,7 +85,7 @@ public class BackpackPanel extends JPanel{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     player.dropEquipment(equipment);
-                    initSubviews();
+                    update(player, backpack);
                 }
             });
 

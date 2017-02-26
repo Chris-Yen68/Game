@@ -38,7 +38,7 @@ public class BackpackPanel extends JPanel{
         this.add(label);
     }
 
-    private void dataToView(){
+    public void dataToView(){
         int x = 10;
         int y = 30;
 

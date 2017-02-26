@@ -29,6 +29,7 @@ public class PlayerPanel extends JPanel implements Observer {
 
     public void setPlayer(Player player) {
         this.player = player;
+        dataToView();
         player.addObserver(this);
     }
 
@@ -40,10 +41,10 @@ public class PlayerPanel extends JPanel implements Observer {
     public void update(Observable O, Object x) {
 
         boolean change = false;
-        change = change || (x == Player.LEVEL_CHANGE);
-        change = change || (x == Player.ABILITY_CHANGE);
-        change = change || (x == Player.HP_CHANGE);
-        change = change || (x == Player.EQUIPMENT_CHANGE);
+        change = change || x == Player.LEVEL_CHANGE;
+        change = change || x == Player.ABILITY_CHANGE;
+        change = change || x == Player.HP_CHANGE;
+        change = change || x == Player.EQUIPMENT_CHANGE;
 
         if (change) {
             dataToView();

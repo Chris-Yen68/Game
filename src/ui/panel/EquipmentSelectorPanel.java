@@ -16,33 +16,15 @@ import ui.view.*;
  */
 public class EquipmentSelectorPanel extends JPanel {
     private Player player = Simulation.newPlayer();
+    private TextField textField = new TextField();
+    private JButton search = new JButton();
     public EquipmentSelectorPanel() {
         setSize(520,170);
         setLayout(null);
         initSubviews();
 
     }
-
-
-    public void initSubviews(){
-        JLabel title = new JLabel("Character");
-        title.setLocation(0,0);
-        title.setSize(520,20);
-        title.setBackground(new Color(244,244,244));
-        this.add(title);
-
-        JLabel itemName = new JLabel("Item");
-        itemName.setLocation(10,30);
-        itemName.setSize(120,40);
-        itemName.setBackground(new Color(236,245,248));
-        this.add(itemName);
-
-        final TextField textField = new TextField();
-        textField.setLocation(140,30);
-        textField.setSize(160,40);
-        this.add(textField);
-
-        JButton search = new JButton();
+    public void dataToView(){
         search.setText("Search");
         search.setLocation(310,30);
         search.setSize(100,40);
@@ -67,7 +49,7 @@ public class EquipmentSelectorPanel extends JPanel {
                         });
                         EquipmentSelectorPanel.this.add(equipmentView);
                         EquipmentSelectorPanel.this.add(addButton);
-                        
+
                         number++;
                         yOfView += 30;
 
@@ -76,6 +58,30 @@ public class EquipmentSelectorPanel extends JPanel {
 
             }
         });
+
+    }
+
+
+    public void initSubviews(){
+        JLabel title = new JLabel("Character");
+        title.setLocation(0,0);
+        title.setSize(520,20);
+        title.setBackground(new Color(244,244,244));
+        this.add(title);
+
+        JLabel itemName = new JLabel("Item");
+        itemName.setLocation(10,30);
+        itemName.setSize(120,40);
+        itemName.setBackground(new Color(236,245,248));
+        this.add(itemName);
+
+
+        textField.setLocation(140,30);
+        textField.setSize(160,40);
+        this.add(textField);
+
+
+
 
     }
 

@@ -22,6 +22,10 @@ public class Equipment {
     private String enhancedAttribute;
     private int enhancedValue;
 
+    public Equipment(String name) {
+        this.name = name;
+    }
+
     /**
      * This is the construtor of game.Equipment
      * @param name String
@@ -52,15 +56,21 @@ public class Equipment {
             if (enhancedAttribute.equals(Player.ABILITY_INT)
                     || enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)
                     || enhancedAttribute.equals(Player.ABILITY_WIS)){
-                isValidate = true;
+                if (enhancedValue >= 1 && enhancedValue <= 5){
+                    isValidate = true;
+                }
             }
         }else if (type.equals(ARMOR)){
             if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)){
-                isValidate = true;
+                if (enhancedValue >= 1 && enhancedValue <= 5){
+                    isValidate = true;
+                }
             }
         }else if (type.equals(SHIELD)){
             if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)){
-                isValidate = true;
+                if (enhancedValue >= 1 && enhancedValue <= 5){
+                    isValidate = true;
+                }
             }
         }else if (type.equals(RING)){
             if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)
@@ -68,12 +78,16 @@ public class Equipment {
                     || enhancedAttribute.equals(Player.ABILITY_CON)
                     || enhancedAttribute.equals(Player.ABILITY_WIS)
                     || enhancedAttribute.equals(Player.ABILITY_CHA)){
-                isValidate = true;
+                if (enhancedValue >= 1 && enhancedValue <= 5){
+                    isValidate = true;
+                }
             }
         }else if (type.equals(BELT)){
             if (enhancedAttribute.equals(Player.ABILITY_CON)
                     || enhancedAttribute.equals(Player.ABILITY_STR)){
-                isValidate = true;
+                if (enhancedValue >= 1 && enhancedValue <= 5){
+                    isValidate = true;
+                }
             }
         }else if (type.equals(BOOTS)){
             if (enhancedAttribute.equals(Player.ATTRIBUTE_ARMOR_CLASS)
@@ -83,9 +97,13 @@ public class Equipment {
         }else if (type.equals(WEAPON)){
             if (enhancedAttribute.equals(Player.ATTRIBUTE_ATTACK_BONUS)
                     || enhancedAttribute.equals(Player.ATTRIBUTE_DAMAGE_BONUS)){
-                isValidate = true;
+
+                if (enhancedValue >= 1 && enhancedValue <= 5){
+                    isValidate = true;
+                }
             }
         }
+
 
         return isValidate;
     }

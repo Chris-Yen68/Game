@@ -5,6 +5,8 @@ import java.awt.*;
 
 /**
  * Created by Penelope on 17/2/24.
+ *
+ * @author Siyu Chen
  */
 public class Window extends JFrame{
     private View contentView;

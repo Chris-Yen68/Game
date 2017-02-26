@@ -6,6 +6,8 @@ import ui.view.Window;
 
 /**
  * Created by Penelope on 17/2/24.
+ *
+ * @author Siyu Chen
  */
 public class Demo {
     public static void main(String[] args) {

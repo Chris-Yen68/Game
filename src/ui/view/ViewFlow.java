@@ -5,6 +5,8 @@ import java.util.List;
 
 /**
  * Created by Penelope on 17/2/24.
+ *
+ * @author Siyu Chen
  */
 public class ViewFlow extends View {
 

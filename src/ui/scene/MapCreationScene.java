@@ -11,6 +11,8 @@ import java.awt.event.MouseListener;
 
 /**
  * Created by Penelope on 17/2/24.
+ *
+ * @author Siyu Chen
  */
 public class MapCreationScene extends View {
     public MapCreationScene() {

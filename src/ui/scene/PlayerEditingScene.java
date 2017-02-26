@@ -14,6 +14,11 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Penelope on 17/2/24.
+ *
+ * This is a class for players to create or edit the details of their characters.
+ * It concludes four different functions of creating or editing details of the player.
+ *
+ * @author Siyu Chen
  */
 public class PlayerEditingScene extends View {
 

@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Penelope on 17/2/24.
+ *
+ * @author Siyu Chen
  */
 public class ItemCreationScene extends View {
 

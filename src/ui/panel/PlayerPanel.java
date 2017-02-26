@@ -13,7 +13,8 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Created by Kai QI on 2017/2/24.
+ * @author Kai QI
+ * @version 1.0
  */
 public class PlayerPanel extends JPanel implements Observer {
 
@@ -38,6 +39,15 @@ public class PlayerPanel extends JPanel implements Observer {
     @Override
     public void update(Observable O, Object x) {
 
+        boolean change = false;
+        change = change || (x == Player.LEVEL_CHANGE);
+        change = change || (x == Player.ABILITY_CHANGE);
+        change = change || (x == Player.HP_CHANGE);
+        change = change || (x == Player.EQUIPMENT_CHANGE);
+
+        if (change) {
+            dataToView();
+        }
     }
 
     /**

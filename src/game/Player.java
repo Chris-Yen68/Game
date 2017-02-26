@@ -23,6 +23,9 @@ public class Player extends Observable{
     public final static String ATTRIBUTE_ATTACK_BONUS = "AB";
     public final static String ATTRIBUTE_DAMAGE_BONUS = "DB";
 
+    public final static String LEVEL_CHANGE = "level change";
+    public final static String ABILITY_CHANGE = "ability change";
+    public final static String HP_CHANGE = "hp change";
     public final static String BACKPACK_CHANGE = "backpack change";
     public final static String EQUIPMENT_CHANGE = "equipment change";
 
@@ -71,6 +74,8 @@ public class Player extends Observable{
         abilityScores.put(ABILITY_INT, Dice.rool(4, 6, 0));
         abilityScores.put(ABILITY_WIS, Dice.rool(4, 6, 0));
         abilityScores.put(ABILITY_CHA, Dice.rool(4, 6, 0));
+        setChanged();
+        notifyObservers(ABILITY_CHANGE);
     }
 
 
@@ -108,7 +113,8 @@ public class Player extends Observable{
     public void pickUpEquipment(Equipment e) {
         if (! isBackpackFull()) {
             backpack.add(e);
-            notifyObservers();
+            setChanged();
+            notifyObservers(BACKPACK_CHANGE);
         }
     }
 
@@ -118,7 +124,8 @@ public class Player extends Observable{
      */
     public void dropEquipment(Equipment e) {
         backpack.remove(e);
-        notifyObservers();
+        setChanged();
+        notifyObservers(BACKPACK_CHANGE);
     }
 
 
@@ -152,6 +159,8 @@ public class Player extends Observable{
         }
         equipments.put(type, e);
         backpack.remove(e);
+        setChanged();
+        notifyObservers(EQUIPMENT_CHANGE);
     }
 
     /**
@@ -163,6 +172,8 @@ public class Player extends Observable{
         backpack.add(e);
         String type = e.getType();
         equipments.remove(type);
+        setChanged();
+        notifyObservers(EQUIPMENT_CHANGE);
     }
 
     /**
@@ -204,6 +215,8 @@ public class Player extends Observable{
      */
     public void setLevel(int level) {
         this.level = level;
+        setChanged();
+        notifyObservers(LEVEL_CHANGE);
     }
 
     /**
@@ -260,6 +273,8 @@ public class Player extends Observable{
      */
     public void setHp(int hp) {
         this.hp = hp;
+        setChanged();
+        notifyObservers(HP_CHANGE);
     }
 
     /**
@@ -269,6 +284,8 @@ public class Player extends Observable{
         int hitDie = Dice.rool(10);
         int levelAdvances = hitDie + getAbilityModifier(ABILITY_CON);
         hp += levelAdvances > 1 ? levelAdvances : 1;
+        setChanged();
+        notifyObservers(HP_CHANGE);
     }
 
     /**

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Saki on 2017/2/24.
+ * @author Qi Xia
  */
 public class Simulation {
     public static Player newPlayer(){

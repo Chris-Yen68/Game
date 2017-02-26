@@ -5,7 +5,7 @@ import game.Equipment;
 import javax.swing.*;
 
 /**
- * Created by Saki on 2017/2/24.
+ * @author Qi Xia
  */
 public class EquipmentView extends JPanel {
 

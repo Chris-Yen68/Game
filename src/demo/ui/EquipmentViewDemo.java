@@ -7,7 +7,7 @@ import ui.view.EquipmentView;
 import javax.swing.*;
 
 /**
- * Created by Saki on 2017/2/24.
+ * @author Qi Xia
  */
 public class EquipmentViewDemo extends JFrame{
     public static void main(String[] args) {

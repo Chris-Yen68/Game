@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 /**
- * Created by Saki on 2017/2/24.
+ * @author Qi Xia
  */
 public class BackpackPanel extends JPanel{
     private Player player = Simulation.newPlayer();

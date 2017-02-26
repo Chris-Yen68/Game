@@ -5,7 +5,7 @@ import ui.panel.BackpackPanel;
 import javax.swing.*;
 
 /**
- * Created by Saki on 2017/2/24.
+ * @author Qi Xia
  */
 public class BackpackPanelDemo extends JFrame{
     public static void main(String[] args) {

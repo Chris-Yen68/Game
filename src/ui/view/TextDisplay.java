@@ -1,7 +1,7 @@
 package ui.view;
 
 /**
- * Created by Saki on 2017/2/24.
+ * @author Qi Xia
  */
 public class TextDisplay {
     public static String signedNumber(int value){

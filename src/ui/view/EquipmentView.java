@@ -33,7 +33,7 @@ public class EquipmentView extends JPanel {
 
     private void initSubviews(){
 
-        JLabel label = new JLabel();
+        JLabel label;
 
         label = new JLabel("", JLabel.RIGHT);
         label.setSize(60, 20);

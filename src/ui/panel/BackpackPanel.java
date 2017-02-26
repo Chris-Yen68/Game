@@ -36,10 +36,11 @@ public class BackpackPanel extends JPanel{
         label.setSize(460, 20);
         label.setLocation(0, 0);
         this.add(label);
+    }
 
+    private void dataToView(){
         int x = 10;
         int y = 30;
-
 
         List<Equipment> backpack;
         backpack = player.equipmentsInBackpack();

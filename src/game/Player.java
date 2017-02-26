@@ -161,6 +161,7 @@ public class Player extends Observable{
         backpack.remove(e);
         setChanged();
         notifyObservers(EQUIPMENT_CHANGE);
+        notifyObservers(BACKPACK_CHANGE);
     }
 
     /**
@@ -174,6 +175,7 @@ public class Player extends Observable{
         equipments.remove(type);
         setChanged();
         notifyObservers(EQUIPMENT_CHANGE);
+        notifyObservers(BACKPACK_CHANGE);
     }
 
     /**

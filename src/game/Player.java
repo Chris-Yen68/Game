@@ -30,7 +30,7 @@ public class Player extends Observable{
     public final static String BACKPACK_CHANGE = "backpack change";
     public final static String EQUIPMENT_CHANGE = "equipment change";
 
-    private Map<String, Integer> ablilityScores = new HashMap<>();
+    private Map<String, Integer> abilityScores = new HashMap<>();
 
     /**
      * This method is used to get the ability score of object based on the given name of the ability.
@@ -38,11 +38,11 @@ public class Player extends Observable{
      * @return Integer
      */
     public Integer getAbilityScore(String name) {
-        return ablilityScores.get(name);
+        return abilityScores.get(name);
     }
 
     public Integer getTotalAbilityScore(String name){
-        return ablilityScores.get(name) + enhancedValueOnEquipments(name);
+        return abilityScores.get(name) + enhancedValueOnEquipments(name);
     }
 
     /**
@@ -60,12 +60,12 @@ public class Player extends Observable{
      * This method is used to calculate the ability scores based on the D20 formulas.
      */
     public void generateAbilities() {
-        ablilityScores.put(ABILITY_STR, Dice.rool(4, 6, 0));
-        ablilityScores.put(ABILITY_DEX, Dice.rool(4, 6, 0));
-        ablilityScores.put(ABILITY_CON, Dice.rool(4, 6, 0));
-        ablilityScores.put(ABILITY_INT, Dice.rool(4, 6, 0));
-        ablilityScores.put(ABILITY_WIS, Dice.rool(4, 6, 0));
-        ablilityScores.put(ABILITY_CHA, Dice.rool(4, 6, 0));
+        abilityScores.put(ABILITY_STR, Dice.rool(4, 6, 0));
+        abilityScores.put(ABILITY_DEX, Dice.rool(4, 6, 0));
+        abilityScores.put(ABILITY_CON, Dice.rool(4, 6, 0));
+        abilityScores.put(ABILITY_INT, Dice.rool(4, 6, 0));
+        abilityScores.put(ABILITY_WIS, Dice.rool(4, 6, 0));
+        abilityScores.put(ABILITY_CHA, Dice.rool(4, 6, 0));
     }
 
 

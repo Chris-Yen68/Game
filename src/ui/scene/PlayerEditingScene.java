@@ -1,6 +1,7 @@
 package ui.scene;
 
 import game.Player;
+import game.Simulation;
 import ui.panel.BackpackPanel;
 import ui.panel.PlayerPanel;
 import ui.view.View;
@@ -17,12 +18,19 @@ public class PlayerEditingScene extends View {
 
     private Player player;
 
+    private PlayerPanel playerPanel;
+    private BackpackPanel backpackPanel;
+
     public Player getPlayer() {
         return player;
     }
 
     public void setPlayer(Player player) {
         this.player = player;
+        playerPanel.setPlayer(player);
+        playerPanel.dataToView();
+        backpackPanel.setPlayer(player);
+        backpackPanel.dataToView();
     }
 
     /**
@@ -86,17 +94,15 @@ public class PlayerEditingScene extends View {
         /**
          * Player Panel
          */
-        PlayerPanel playerPanel = new PlayerPanel();
+        playerPanel = new PlayerPanel();
         playerPanel.setLocation(20, 120);
-        playerPanel.setPlayer(player);
         desktop.add(playerPanel);
 
         /**
          * Backpack Panel
          */
-        BackpackPanel backpackPanel = new BackpackPanel();
+        backpackPanel = new BackpackPanel();
         backpackPanel.setLocation(440, 200);
-        backpackPanel.setPlayer(player);
         desktop.add(backpackPanel);
 
         repaint();

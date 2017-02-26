@@ -9,11 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by Kai QI on 2017/2/24.
  */
-public class PlayerPanel extends JPanel {
+public class PlayerPanel extends JPanel implements Observer {
 
     /**
      * The attribute player and Getter & Setter.
@@ -26,6 +28,16 @@ public class PlayerPanel extends JPanel {
 
     public void setPlayer(Player player) {
         this.player = player;
+        player.addObserver(this);
+    }
+
+    /**
+     * Observer
+     */
+
+    @Override
+    public void update(Observable O, Object x) {
+
     }
 
     /**

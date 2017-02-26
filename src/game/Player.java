@@ -10,7 +10,7 @@ import java.util.*;
  * @version 1.2
  *
  */
-public class Player {
+public class Player extends Observable{
 
     /**
      * Abliblities and methods.
@@ -26,6 +26,9 @@ public class Player {
     public final static String ATTRIBUTE_ARMOR_CLASS = "AC";
     public final static String ATTRIBUTE_ATTACK_BONUS = "AB";
     public final static String ATTRIBUTE_DAMAGE_BONUS = "DB";
+
+    public final static String BACKPACK_CHANGE = "backpack change";
+    public final static String EQUIPMENT_CHANGE = "equipment change";
 
     private Map<String, Integer> ablilityScores = new HashMap<>();
 
@@ -100,6 +103,7 @@ public class Player {
     public void pickUpEquipment(Equipment e) {
         if (! isBackpackFull()) {
             backpack.add(e);
+            notifyObservers();
         }
     }
 
@@ -109,6 +113,7 @@ public class Player {
      */
     public void dropEquipment(Equipment e) {
         backpack.remove(e);
+        notifyObservers();
     }
 
 

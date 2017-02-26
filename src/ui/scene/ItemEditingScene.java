@@ -2,6 +2,8 @@ package ui.scene;
 
 import ui.view.View;
 
+import game.Equipment;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,8 +17,12 @@ import java.awt.event.MouseListener;
  */
 public class ItemEditingScene extends View {
 
+
+    private Equipment equipment;
+    private JLabel nameLabel;
     private JLabel typeLabel;
     private JLabel enhanceOnLabel;
+    private TextField valueTextField;
 
     public ItemEditingScene() {
         setLayout(null);
@@ -112,6 +118,7 @@ public class ItemEditingScene extends View {
         label.setBackground(new Color(0xAED6F1));
         label.setHorizontalAlignment(JLabel.LEFT);
         label.setLocation(150, 60);
+        nameLabel = label;
         label.setText("The Sword Of Light");
         this.add(label);
 
@@ -629,6 +636,7 @@ public class ItemEditingScene extends View {
         textField = new TextField();
         textField.setSize(160, 40);
         textField.setLocation(150, 410);
+        valueTextField = textField;
         this.add(textField);
 
         /*
@@ -642,6 +650,13 @@ public class ItemEditingScene extends View {
         button.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                int valueOfEnhance = Integer.valueOf(valueTextField.getText());
+                Equipment theEquipment;
+                Equipment equipment = new Equipment(nameLabel.getText(), typeLabel.getText(), enhanceOnLabel.getText(), valueOfEnhance);
+                while(equipment.validate() == false){
+
+                }
+
 
             }
 

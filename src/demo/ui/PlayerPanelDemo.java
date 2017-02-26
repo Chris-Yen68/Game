@@ -14,6 +14,7 @@ public class PlayerPanelDemo extends JFrame {
         window.setSize(200, 50);
         window.setLayout(null);
         window.setVisible(true);
+
     }
     public PlayerPanelDemo(){
         PlayerPanel playerPanel = new PlayerPanel();
@@ -23,6 +24,7 @@ public class PlayerPanelDemo extends JFrame {
         playerPanel.dataToView();
 
         this.add(playerPanel);
+        repaint();
 
 
     }

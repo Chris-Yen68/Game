@@ -57,6 +57,8 @@ public class BackpackPanel extends JPanel implements Observer{
         int x = 10;
         int y = 30;
 
+        /// 我就是测测 到底是谁
+
         List<Equipment> backpack;
         backpack = player.equipmentsInBackpack();
 

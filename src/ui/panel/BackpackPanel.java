@@ -16,7 +16,7 @@ import java.util.Observer;
  * @author Qi Xia
  */
 public class BackpackPanel extends JPanel implements Observer{
-    private Player player = Simulation.newPlayer();
+    private Player player;
 
     public Player getPlayer() {
         return player;
@@ -47,11 +47,11 @@ public class BackpackPanel extends JPanel implements Observer{
         change = change || (x == Player.BACKPACK_CHANGE);
 
         if (change) {
-            viewToData();
+            dataToView();
         }
     }
 
-    public void viewToData(){
+    public void dataToView(){
         int x = 10;
         int y = 30;
 
@@ -74,7 +74,6 @@ public class BackpackPanel extends JPanel implements Observer{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     player.equip(equipment);
-                    update(player, backpack);
                 }
             });
 
@@ -85,7 +84,6 @@ public class BackpackPanel extends JPanel implements Observer{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     player.dropEquipment(equipment);
-                    update(player, backpack);
                 }
             });
 

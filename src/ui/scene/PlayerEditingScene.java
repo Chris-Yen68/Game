@@ -36,7 +36,7 @@ public class PlayerEditingScene extends View {
         playerPanel.setPlayer(player);
         playerPanel.dataToView();
         backpackPanel.setPlayer(player);
-        backpackPanel.viewToData();
+        backpackPanel.dataToView();
     }
 
     /**

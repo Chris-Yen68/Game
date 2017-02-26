@@ -12,10 +12,6 @@ import java.util.*;
  */
 public class Player extends Observable{
 
-    /**
-     * Abliblities and methods.
-     */
-
     public final static String ABILITY_STR = "STR";
     public final static String ABILITY_DEX = "DEX";
     public final static String ABILITY_CON = "CON";
@@ -30,6 +26,11 @@ public class Player extends Observable{
     public final static String BACKPACK_CHANGE = "backpack change";
     public final static String EQUIPMENT_CHANGE = "equipment change";
 
+
+    /**
+     * Abilities and methods.
+     */
+
     private Map<String, Integer> abilityScores = new HashMap<>();
 
     /**
@@ -41,6 +42,11 @@ public class Player extends Observable{
         return abilityScores.get(name);
     }
 
+    /**
+     * This method is used to get the total ability score of object after enhanced by equipments.
+     * @param name String
+     * @return Integer
+     */
     public Integer getTotalAbilityScore(String name){
         return abilityScores.get(name) + enhancedValueOnEquipments(name);
     }
@@ -54,7 +60,6 @@ public class Player extends Observable{
         int ability = getAbilityScore(name);
         return (int)(Math.floor(ability / 2.0 - 5));
     }
-
 
     /**
      * This method is used to calculate the ability scores based on the D20 formulas.
@@ -178,10 +183,10 @@ public class Player extends Observable{
         return result;
     }
 
+
     /**
      * Level, name and Getter & Setter & constructor.
      */
-
     private int level;
     private String name;
 
@@ -217,21 +222,23 @@ public class Player extends Observable{
         this.name = name;
     }
 
+
     /**
      * Constructor without parameters.
      */
+
     public Player() {
     }
 
     /**
      * Constructor with parameters, level and name.
-     * @param level
      * @param name
      */
-    public Player(int level, String name) {
-        this.level = level;
+
+    public Player(String name) {
         this.name = name;
     }
+
 
     /**
      * Hp and methods.

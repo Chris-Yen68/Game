@@ -57,16 +57,19 @@ public class PlayerPanel extends JPanel implements Observer {
 
     private JLabel nameValueLabel;
     private JLabel levelValueLabel;
+
     private AbilityView strAbilityView;
     private AbilityView intAbilityView;
     private AbilityView dexAbilityView;
     private AbilityView wisAbilityView;
     private AbilityView conAbilityView;
     private AbilityView chaAbilityView;
+
     private JLabel hpValueLabel;
     private JLabel abValueLabel;
     private JLabel acValueLabel;
     private JLabel dbValueLabel;
+
     private EquipmentView weaponEquipmentView;
     private EquipmentView shieldEquipmentView;
     private EquipmentView armorEquipmentView;
@@ -74,6 +77,14 @@ public class PlayerPanel extends JPanel implements Observer {
     private EquipmentView ringEquipmentView;
     private EquipmentView beltEquipmentView;
     private EquipmentView bootsEquipmentView;
+
+    Button unequipWeaponBotton;
+    Button unequipShieldBotton;
+    Button unequipArmorBotton;
+    Button unequipHelmetBotton;
+    Button unequipRingBotton;
+    Button unequipBeltBotton;
+    Button unequipBootsBotton;
 
     private void initSubviews(){
 
@@ -221,7 +232,7 @@ public class PlayerPanel extends JPanel implements Observer {
         button.setSize(60, 20);
         button.setLocation(320, 210);
         add(button);
-        Button unequipWeaponBotton = new Button();
+        unequipWeaponBotton = new Button();
         unequipWeaponBotton = button;
 
         equipmentView = new EquipmentView();
@@ -234,7 +245,7 @@ public class PlayerPanel extends JPanel implements Observer {
         button.setSize(60, 20);
         button.setLocation(320, 240);
         add(button);
-        Button unequipShieldBotton = new Button();
+        unequipShieldBotton = new Button();
         unequipShieldBotton = button;
 
         equipmentView = new EquipmentView();
@@ -247,7 +258,7 @@ public class PlayerPanel extends JPanel implements Observer {
         button.setSize(60, 20);
         button.setLocation(320, 270);
         add(button);
-        Button unequipArmorBotton = new Button();
+        unequipArmorBotton = new Button();
         unequipArmorBotton = button;
 
         equipmentView = new EquipmentView();
@@ -260,7 +271,7 @@ public class PlayerPanel extends JPanel implements Observer {
         button.setSize(60, 20);
         button.setLocation(320, 300);
         add(button);
-        Button unequipHelmetBotton = new Button();
+        unequipHelmetBotton = new Button();
         unequipHelmetBotton = button;
 
         equipmentView = new EquipmentView();
@@ -273,7 +284,7 @@ public class PlayerPanel extends JPanel implements Observer {
         button.setSize(60, 20);
         button.setLocation(320, 330);
         add(button);
-        Button unequipRingBotton = new Button();
+        unequipRingBotton = new Button();
         unequipRingBotton = button;
 
         equipmentView = new EquipmentView();
@@ -286,7 +297,7 @@ public class PlayerPanel extends JPanel implements Observer {
         button.setSize(60, 20);
         button.setLocation(320, 360);
         add(button);
-        Button unequipBeltBotton = new Button();
+        unequipBeltBotton = new Button();
         unequipBeltBotton = button;
 
         equipmentView = new EquipmentView();
@@ -299,8 +310,78 @@ public class PlayerPanel extends JPanel implements Observer {
         button.setSize(60, 20);
         button.setLocation(320, 390);
         add(button);
-        Button unequipBootsBotton = new Button();
+        unequipBootsBotton = new Button();
         unequipBootsBotton = button;
+
+
+    }
+
+    public void dataToView() {
+
+        nameValueLabel.setText(player.getName());
+        levelValueLabel.setText(player.getLevel() + "");
+
+        strAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_STR) + "");
+        strAbilityView.modifierLabel.setText(player.getAbilityModifier(Player.ABILITY_STR) + "");
+
+        intAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_INT) + "");
+        intAbilityView.modifierLabel.setText(player.getAbilityModifier(Player.ABILITY_INT) + "");
+
+        dexAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_DEX) + "");
+        dexAbilityView.modifierLabel.setText(player.getAbilityModifier(Player.ABILITY_DEX) + "");
+
+        wisAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_WIS) + "");
+        wisAbilityView.modifierLabel.setText(player.getAbilityModifier(Player.ABILITY_WIS) + "");
+
+        conAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CON) + "");
+        conAbilityView.modifierLabel.setText(player.getAbilityModifier(Player.ABILITY_CON) + "");
+
+        chaAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CHA) + "");
+        chaAbilityView.modifierLabel.setText(player.getAbilityModifier(Player.ABILITY_CHA) + "");
+
+        hpValueLabel.setText(player.getHp() + "");
+        abValueLabel.setText(player.getAttackBonus() + "");
+        acValueLabel.setText(player.getArmorClass() + "");
+        dbValueLabel.setText(player.getDamageBonus() + "");
+
+        Equipment weapon = player.getEquipment(Equipment.WEAPON);
+        if (weapon != null) {
+            weaponEquipmentView.setEquipment(weapon);
+        }
+
+        Equipment shield = player.getEquipment(Equipment.SHIELD);
+        if (shield != null) {
+            shieldEquipmentView.setEquipment(shield);
+        }
+
+        Equipment armor = player.getEquipment(Equipment.ARMOR);
+        if (armor != null) {
+            armorEquipmentView.setEquipment(armor);
+        }
+
+        Equipment helmet = player.getEquipment(Equipment.HELMET);
+        if (helmet != null) {
+            helmetEquipmentView.setEquipment(helmet);
+        }
+
+        Equipment ring = player.getEquipment(Equipment.RING);
+        if (ring != null) {
+            ringEquipmentView.setEquipment(ring);
+        }
+
+        Equipment belt = player.getEquipment(Equipment.BELT);
+        if (belt != null) {
+            beltEquipmentView.setEquipment(belt);
+        }
+
+        Equipment boots = player.getEquipment(Equipment.BOOTS);
+        if (boots != null) {
+            bootsEquipmentView.setEquipment(boots);
+        }
+
+    }
+
+    public void viewToDate() {
 
         unequipWeaponBotton.addActionListener(new ActionListener() {
             @Override
@@ -346,7 +427,7 @@ public class PlayerPanel extends JPanel implements Observer {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Equipment currentEquipment = player.getEquipment(Equipment.RING);
-                    if (currentEquipment != null) {
+                if (currentEquipment != null) {
                     player.unequip(currentEquipment);
                 }
             }
@@ -371,59 +452,6 @@ public class PlayerPanel extends JPanel implements Observer {
                 }
             }
         });
-    }
-
-    public void dataToView(){
-        nameValueLabel.setText(player.getName());
-        levelValueLabel.setText(player.getLevel() + "");
-
-        strAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_STR) + "");
-        intAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_INT) + "");
-        dexAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_DEX) + "");
-        wisAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_WIS) + "");
-        conAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CON) + "");
-        chaAbilityView.scoreLabel.setText(player.getAbilityScore(Player.ABILITY_CHA) + "");
-
-        hpValueLabel.setText(player.getHp() + "");
-        abValueLabel.setText(player.getAttackBonus() + "");
-        acValueLabel.setText(player.getArmorClass() + "");
-        dbValueLabel.setText(player.getDamageBonus() + "");
-
-        Equipment weapon = player.getEquipment(Equipment.WEAPON);
-        if (weapon != null) {
-            weaponEquipmentView.setEquipment(weapon);
-        }
-
-        Equipment shield = player.getEquipment(Equipment.SHIELD);
-        if (shield != null) {
-            shieldEquipmentView.setEquipment(shield);
-        }
-
-        Equipment armor = player.getEquipment(Equipment.ARMOR);
-        if (armor != null) {
-            armorEquipmentView.setEquipment(armor);
-        }
-
-        Equipment helmet = player.getEquipment(Equipment.HELMET);
-        if (helmet != null) {
-            helmetEquipmentView.setEquipment(helmet);
-        }
-
-        Equipment ring = player.getEquipment(Equipment.RING);
-        if (ring != null) {
-            ringEquipmentView.setEquipment(ring);
-        }
-
-        Equipment belt = player.getEquipment(Equipment.BELT);
-        if (belt != null) {
-            beltEquipmentView.setEquipment(belt);
-        }
-
-        Equipment boots = player.getEquipment(Equipment.BOOTS);
-        if (boots != null) {
-            bootsEquipmentView.setEquipment(boots);
-        }
-
     }
     
 }

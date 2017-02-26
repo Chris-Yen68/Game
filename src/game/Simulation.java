@@ -10,7 +10,8 @@ import java.util.List;
  */
 public class Simulation {
     public static Player newPlayer(){
-        Player player = new Player(2, "playerDemo");
+        Player player = new Player("playerDemo");
+        player.setLevel(2);
         player.generateAbilities();
         player.generateHp();
 

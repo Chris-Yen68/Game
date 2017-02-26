@@ -16,7 +16,7 @@ import java.util.Observer;
  * @author Qi Xia
  */
 public class BackpackPanel extends JPanel implements Observer{
-    private Player player = Simulation.newPlayer();
+    private Player player;
 
     public Player getPlayer() {
         return player;
@@ -27,6 +27,8 @@ public class BackpackPanel extends JPanel implements Observer{
         dataToView();
         player.addObserver(this);
     }
+
+    private JPanel equipmentsPanel;
 
     public BackpackPanel(){
         this.setLayout(null);
@@ -40,6 +42,12 @@ public class BackpackPanel extends JPanel implements Observer{
         label.setSize(460, 20);
         label.setLocation(0, 0);
         this.add(label);
+
+        equipmentsPanel = new JPanel();
+        equipmentsPanel.setLayout(null);
+        equipmentsPanel.setSize(460, 310);
+        equipmentsPanel.setLocation(0, 20);
+        add(equipmentsPanel);
     }
 
     @Override
@@ -54,8 +62,11 @@ public class BackpackPanel extends JPanel implements Observer{
     }
 
     public void dataToView(){
+        equipmentsPanel.removeAll();
+
+
         int x = 10;
-        int y = 30;
+        int y = 10;
 
         List<Equipment> backpack;
         backpack = player.equipmentsInBackpack();
@@ -63,7 +74,7 @@ public class BackpackPanel extends JPanel implements Observer{
         for (Equipment equipment : backpack) {
             EquipmentView equipmentView = new EquipmentView();
             equipmentView.setLocation(x, y);
-            this.add(equipmentView);
+            equipmentsPanel.add(equipmentView);
             equipmentView.setEquipment(equipment);
 
             JButton equipButton = new JButton("equip");
@@ -71,7 +82,7 @@ public class BackpackPanel extends JPanel implements Observer{
 
             equipButton.setSize(60, 20);
             equipButton.setLocation(310, y);
-            this.add(equipButton);
+            equipmentsPanel.add(equipButton);
             equipButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -81,7 +92,7 @@ public class BackpackPanel extends JPanel implements Observer{
 
             dropButtton.setSize(60, 20);
             dropButtton.setLocation(380, y);
-            this.add(dropButtton);
+            equipmentsPanel.add(dropButtton);
             dropButtton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -91,5 +102,7 @@ public class BackpackPanel extends JPanel implements Observer{
 
             y += 30;
         }
+
+        repaint();
     }
 }

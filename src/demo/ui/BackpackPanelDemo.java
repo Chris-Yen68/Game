@@ -1,5 +1,6 @@
 package demo.ui;
 
+import game.Simulation;
 import ui.panel.BackpackPanel;
 
 import javax.swing.*;
@@ -17,7 +18,8 @@ public class BackpackPanelDemo extends JFrame{
 
     public BackpackPanelDemo(){
         BackpackPanel backpackPanel = new BackpackPanel();
-        backpackPanel.setLocation(0, 20);
+        backpackPanel.setPlayer(Simulation.newPlayer());
+        backpackPanel.setLocation(0, 0);
         this.add(backpackPanel);
     }
 }

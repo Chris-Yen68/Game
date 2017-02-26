@@ -44,7 +44,7 @@ public class BackpackPanel extends JPanel implements Observer{
     public void update(Observable observer, Object x) {
 
         boolean change = false;
-        change = change || x.equals(Player.BACKPACK_CHANGE);
+        change = change || (x == Player.BACKPACK_CHANGE);
 
         if (change) {
             viewToData();

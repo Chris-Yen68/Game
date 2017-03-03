@@ -24,10 +24,12 @@ public class EquipmentSelectorPanel extends JPanel {
         initSubviews();
 
     }
+
+    public void givePlayer(Player player){
+        this.player = player;
+    }
     public void dataToView(){
-        search.setText("Search");
-        search.setLocation(310,30);
-        search.setSize(100,40);
+
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 List<Equipment> list = player.equipmentsInBackpack();
@@ -79,6 +81,10 @@ public class EquipmentSelectorPanel extends JPanel {
         textField.setLocation(140,30);
         textField.setSize(160,40);
         this.add(textField);
+
+        search.setText("Search");
+        search.setLocation(310,30);
+        search.setSize(100,40);
 
 
 

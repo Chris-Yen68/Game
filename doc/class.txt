@@ -14,7 +14,7 @@ game.Player
 +   ATTRIBUTE_ATTACK_BONUS:String sta
 +   ATTRIBUTE_DAMAGE_BONUS:String sta
 
--   abilityScores:[String:Integer]ssss
+-   abilityScores:[String:Integer]ssss ssssssss
 +   getAbilityScore(name:String):Integer
 +   getTotalAbilityScore(name:String):Integer
 +   getAbilityModifier(name:String):Integer
